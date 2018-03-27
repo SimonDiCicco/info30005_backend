@@ -2,42 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6208f20c-2ee3-469c-b695-8722c083b765" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ejs/Jakefile" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ejs/LICENSE" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ejs/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ejs/ejs.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ejs/ejs.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ejs/lib/ejs.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ejs/lib/utils.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ejs/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/file-match/.npmignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/file-match/Gruntfile.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/file-match/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/file-match/file-match.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/file-match/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/file-match/test/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/file-system/.npmignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/file-system/Gruntfile.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/file-system/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/file-system/file-system.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/file-system/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/file-system/test/copy.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/file-system/test/copyFile.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/file-system/test/filter.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/file-system/test/fs.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/file-system/test/mkdir.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/file-system/test/recurse.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/file-system/test/test.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/utils-extend/.npmignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/utils-extend/Gruntfile.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/utils-extend/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/utils-extend/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/utils-extend/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/utils-extend/test/extend.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/utils-extend/test/pick.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/utils-extend/test/typeCheck.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
       <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -65,8 +29,8 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+            <state relative-caret-position="600">
+              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -106,7 +70,17 @@
         <entry file="file://$PROJECT_DIR$/myApp/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
-              <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="29" />
+              <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="www" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/www">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -153,8 +127,8 @@
         <option value="$PROJECT_DIR$/public/css/styles.css" />
         <option value="$PROJECT_DIR$/styles.css" />
         <option value="$PROJECT_DIR$/views/ComingSoon.ejs" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -194,6 +168,11 @@
             <path>
               <item name="info30005_backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="info30005_backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="info30005_backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="info30005_backend" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="info30005_backend" type="b2602c69:ProjectViewProjectNode" />
@@ -253,12 +232,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1522125326407</updated>
-      <workItem from="1522125327634" duration="6758000" />
+      <workItem from="1522125327634" duration="7004000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6758000" />
+    <option name="totallyTimeSpent" value="7004000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3872" height="2092" extended-state="6" />
@@ -342,18 +321,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bin/www">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/myApp/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="29" />
+          <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+        <state relative-caret-position="600">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
           <folding />
         </state>
       </provider>
