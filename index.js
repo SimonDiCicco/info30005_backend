@@ -9,7 +9,7 @@ app.set('view engine','ejs');
 //Heroku server port
 const PORT = process.env.PORT || 3000;
 
-//get route
+//Coming soon page
 app.get('/',function(req,res){
     res.render('ComingSoon');
 
