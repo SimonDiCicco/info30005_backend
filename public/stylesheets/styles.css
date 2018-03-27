@@ -9,7 +9,7 @@ html{
 
 body {
      background-color: lightblue;
-     /*background: linear-gradient(rgba(27, 17, 11, .85), rgba(114, 70, 48, .2)), url(https://source.unsplash.com/CakC6u4d95g/1600x900) center;*/
+
      background-size: cover;
  }
 
