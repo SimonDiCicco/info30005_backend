@@ -9,4 +9,4 @@ router.get('/',controller.renderComingSoon());
 
 router.get('/test',controller.test());
 
-module.exporte = router;
+module.exports = router;
