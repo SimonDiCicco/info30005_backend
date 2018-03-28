@@ -22,7 +22,7 @@ app.get('/inspo',function(req,res){
 //app.get('/test', controller.test());
 
 
-//start server
+//Listen for heroku server port
 app.listen(PORT,function(){
     console.log('server started');
 
