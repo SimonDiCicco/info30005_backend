@@ -34,6 +34,7 @@ h2 {
 
 h3 {
     background-color: #d2a56e;
+    opacity: 0.6;
     font-family: 'lato', 'sans-serif';
     font-weight: 700;
     text-transform: uppercase;
