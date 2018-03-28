@@ -1,4 +1,29 @@
+
+const express = require('express');
+const app = express();
+const controller = require('./Controllers/controller');
+//const router = require('./routes/routes');
+//Set View engine
+app.set('view engine','ejs');
+app.use(express.static('public'));
+//Heroku server port
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, function() {
-    console.log(`Express listening on port ${PORT}`);
+
+//Coming soon page render
+app.get('/',function(req,res){
+    res.render('ComingSoon.ejs');
 });
+app.get('/inspo',function(req,res){
+    res.render('inspo.ejs');
+})
+
+//For use with controller and router
+//app.use(router);
+//app.get('/test', controller.test());
+
+
+//start server
+app.listen(PORT,function(){
+    console.log('server started');
+
+})
