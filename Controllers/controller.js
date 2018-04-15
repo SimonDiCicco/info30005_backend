@@ -1,7 +1,7 @@
 
 
 module.exports.renderComingSoon = function(req,res){
-    res.render('ComingSoon.html');
+    res.render('ComingSoon.ejs');
 };
 
 module.exports.test = function(req, res){
