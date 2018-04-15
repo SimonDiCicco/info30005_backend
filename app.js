@@ -5,7 +5,7 @@ const controller = require('./Controllers/controller');
 //const router = require('./routes/routes');
 //Set View engine
 app.set('view engine','ejs');
-
+app.use(express.static('public'));
 //Heroku server port
 const PORT = process.env.PORT || 3000;
 
