@@ -11,10 +11,10 @@ const PORT = process.env.PORT || 3000;
 
 //Coming soon page render
 app.get('/',function(req,res){
-    res.render('ComingSoon.ejs');
+    res.render('ComingSoon.html');
 });
-app.get('/inspo',function(req,res){
-    res.render('inspo.ejs');
+app.get('/Home',function(req,res){
+    res.render('Home.html');
 })
 
 //For use with controller and router
