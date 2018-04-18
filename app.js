@@ -53,11 +53,14 @@ function goCompanies(){
     window.location = '';
 }
 function goTraining(){
-    window.location = '';
+    window.location = 'training.HTML';
 }
 function goExperience(){
-    window.location = '';
+    window.location = 'experiences.HTML';
 
+}
+function goUserSignup() {
+    window.location = 'userSignup.HTML';
 }function goToProfile(elementid){
     //check username in db
     //username = document.getElementById(elementid).valueOf();
