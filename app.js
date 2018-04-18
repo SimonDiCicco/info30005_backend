@@ -85,6 +85,7 @@ function postJob(){
 
 function goHome(){
     window.location = 'Home.ejs';
+
 }
 function goJobs(){
     window.location = 'jobs.ejs';
