@@ -147,6 +147,16 @@ td {
 
 }
 
+.emailBox  {
+    font-size:12pt;
+    width: 400px;
+    height: 30px;
+    align-content: right;
+    bottom: 20px;
+    padding-right: 4em;
+
+}
+
 .descBox   {
     font-size:12pt;
     width: 400px;
