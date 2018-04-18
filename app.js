@@ -125,6 +125,23 @@ function goToCompanyProfile(){
     window.location ='companyProfile.html';
 }
 
+//Uploading Images
+//Reading and uploading an image file
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#blah')
+                .attr('src', e.target.result)
+                .width(150)
+                .height(200);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
 //For use with controller and router
 //app.use(router);
 //app.get('/test', controller.test());
