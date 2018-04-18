@@ -44,27 +44,8 @@ function companySignUp(){
 
 
 function login(){
-    var num = Math.floor(Math.random()*10)+1;
 
-        if( num >5){
-            window.location= 'userProfile.html';
-            document.getElementById("UserFullName").value = "Bob Shmif";
-
-        }else{
-            window.location = 'companyProfile.html';
-            document.getElementById("CompanyName").value = "CardBoard Enthusiasts";
-
-        }
-
-
-
-
-
-
-
-
-
-
+          goJobs();
 }
 function clearContent(id){
     document.getElementById(id).value = '';
