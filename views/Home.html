@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Home Page</title>
     <link rel="stylesheet" type="text/css" href="../public/stylesheets/home.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../public/stylesheets/modalForm.css" media="screen">
+    <script src="../app.js"></script>
 </head>
 <body>
     <div class = "page">
@@ -16,15 +16,15 @@
         </div>
 
         <div class = "buttonLinks">
-            <button name = "homeButton" type = "button">Home</button>
+            <button name = "homeButton" type = "button" onclick="goHome();">Home</button>
             <br>
-            <button name ="jobsButton" type = "button">Jobs</button>
+            <button name ="jobsButton" type = "button" onclick="goJobs();">Jobs</button>
             <br>
-            <button name = "companiesButton" type = "button">Companies</button>
+            <button name = "companiesButton" type = "button" onclick="goCompanies();">Companies</button>
             <br>
-            <button name = "trainingButton" type = "button">Training</button>
+            <button name = "trainingButton" type = "button" onclick="goTraining();">Training</button>
             <br>
-            <button name = "userButton" type = "button">User Experiences</button>
+            <button name = "userButton" type = "button" onclick="goExperience();">User Experiences</button>
 
 
 
@@ -72,6 +72,7 @@
         <!-- Content within the ModalForm -->
         <form class = "OpenModalForm" action="../app.js">
             <div class="popup">
+                <br><br>
                 <label ><b>Username: </b></label>
                 <input  id= "uname " type="text" placeholder="Enter your Username" name = "username" required>
                 <br><br>
