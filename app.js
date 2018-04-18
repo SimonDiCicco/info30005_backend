@@ -19,7 +19,7 @@ app.get('/',function(req,res){
 
 app.get('/home',function(req,res){
 
-    res.render('Home.html');
+    res.render('Home.ejs');
 });
 
 
@@ -76,7 +76,7 @@ function clearContent(id){
     document.getElementById(id).value = '';
 }
 function addJob(){
-    window.location = 'JobPost.html';
+    window.location = 'JobPost.ejs';
 }
 
 function postJob(){
@@ -87,28 +87,28 @@ function postJob(){
         email: document.getElementById('jobEmail').valueOf()
     };
     //jobs.push(job);
-    window.location = 'companyProfile.html';
+    window.location = 'companyProfile.ejs';
 }
     /* Submit and save data entered*/
 
 function goHome(){
-    window.location = 'Home.html';
+    window.location = 'Home.ejs';
 }
 function goJobs(){
-    window.location = 'jobs.html';
+    window.location = 'jobs.ejs';
 }
 function goCompanies(){
-    window.location = 'companies.html';
+    window.location = 'companies.ejs';
 }
 function goTraining(){
-    window.location = 'training.html';
+    window.location = 'training.ejs';
 }
 function goExperience(){
-    window.location = 'experiences.html';
+    window.location = 'experiences.ejs';
 
 }
 function goUserSignup() {
-    window.location = 'userSignup.html';
+    window.location = 'userSignup.ejs';
 }
 function goCompanySignup(){
     window.location = 'companySignup.html';
@@ -117,12 +117,17 @@ function goToProfile(elementid){
     //check username in db
     //username = document.getElementById(elementid).valueOf();
     //if user go to userPage
-    window.location='userProfile.html';
+    if((Math.floor(Math.random() *2)+1) === 1){
+        window.location='userProfile.ejs'
+    }else{
+        window.location ='companyProfile.ejs';
+    }
+
     //if company go to companyPage
     //window.location='companyProfile';
 }
 function goToCompanyProfile(){
-    window.location ='companyProfile.html';
+    window.location ='companyProfile.ejs';
 }
 
 //For use with controller and router
