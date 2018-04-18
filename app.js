@@ -34,6 +34,39 @@ function adduser(){
     //Open/Render login page
 
 }
+function clearContent(id){
+    document.getElementById(id).value = '';
+}
+
+function postJob(){
+    window.location = 'companyProfile.html';
+
+    /* Submit and save data entered*/
+}
+function goHome(){
+    window.location = 'Home.html';
+}
+function goJobs(){
+    window.location = '';
+}
+function goCompanies(){
+    window.location = '';
+}
+function goTraining(){
+    window.location = '';
+}
+function goExperience(){
+    window.location = '';
+
+}function goToProfile(elementid){
+    //check username in db
+    //username = document.getElementById(elementid).valueOf();
+    //if user go to userPage
+    window.location='userProfile.html';
+    //if company go to companyPage
+    //window.location='companyProfile';
+}
+
 //For use with controller and router
 //app.use(router);
 //app.get('/test', controller.test());
