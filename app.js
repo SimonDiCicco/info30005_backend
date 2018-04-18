@@ -2,9 +2,9 @@
 const express = require('express');
 const app = express();
 
-const controller = require('./Controllers/controller');
-//Obtain Modal Form
-const modalForm = document.getElementById('id1');
+//const controller = require('./Controllers/controller');
+
+
 //const router = require('./routes/routes');
 //Set View engine
 app.set('view engine','ejs');
