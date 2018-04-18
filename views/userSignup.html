@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>User Signup</title>
     <link rel="stylesheet" type="text/css" href="../public/stylesheets/userSignup.css" media="screen">
+
     <script src="../app.js"></script>
 </head>
 
@@ -34,12 +35,19 @@
                 <tr>
                     <td>First Name:</td>
                     <td>Last Name:</td>
-                    <td>Username:</td>
+
                 </tr>
                 <tr>
                     <td><input type="text" name="firstName" class="nameBox"></td>
                     <td><input type="text" name="lastName" class="nameBox"></td>
-                    <td><input type="text" name="username" class="nameBox" </td>
+                </tr>
+                <tr><td>Username:</td>
+                    <td>Password:</td>
+                </tr>
+                <tr>
+
+                    <td><input id="newUsername" type="text" name="username" class="nameBox"></td>
+                    <td><input id="newPassword" type="text" name="password" class="nameBox"></td>
                 </tr>
             </table>
             <div class = "paddingtext">
@@ -67,7 +75,7 @@
             <button name = "image" type = "button">Upload Image</button>
         </div>
         <div class="buttonLinks">
-            <button onclick = "goJobs();"name = "submit" type = "button">Sign Up</button>
+            <button onclick = "userSignUp();"name = "submit" type = "button">Sign Up</button>
         </div>
     </div>
 

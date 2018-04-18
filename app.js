@@ -21,7 +21,7 @@ app.get('/home',function(req,res){
 
     res.render('Home.html');
 });
-var names = ["admin"];
+
 
 window.onclick=function(event){
 
@@ -30,12 +30,25 @@ window.onclick=function(event){
 };
 /***********************************************************************/
 //Local Data storage
-
-
+/*
+username = ["admin"];
+password = ["password"];
+*/
 /******************************************************************/
 function userSignUp(){
+    /*
+    var uname = document.getElementById("newUsername").value;
+    var pword = document.getElementById("newPassword").value;
+
+    this.username.push(uname);
+    this.password.push(pword);
+    console.log(this.username);
+    console.log(this.password);
+*/
+    goJobs();
 
 }
+
 function companySignUp(){
 /*get data from html add to arraylist open newpage with usernamespecified*/
 }
@@ -44,8 +57,20 @@ function companySignUp(){
 
 
 function login(){
+    console.log(username);
+        var uname = document.getElementById("uname").value;
+        var pword = document.getElementById("pword").value;
+        console.log(uname);
+        console.log(pword);
 
-          goJobs();
+        for(var i = 0; i<username.length;i++){
+            if (username[i] === uname){
+                if(password[i] === pword){
+                    goJobs();
+                }
+            }
+        }
+
 }
 function clearContent(id){
     document.getElementById(id).value = '';
@@ -97,7 +122,7 @@ function goToProfile(elementid){
     //window.location='companyProfile';
 }
 function goToCompanyProfile(){
-    window.location ='companyProfile.html'
+    window.location ='companyProfile.html';
 }
 
 //For use with controller and router
@@ -109,4 +134,4 @@ function goToCompanyProfile(){
 app.listen(PORT,function(){
     console.log('server started');
 
-})
+});
