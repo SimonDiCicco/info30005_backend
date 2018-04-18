@@ -21,7 +21,12 @@ body{
     background-size: cover;
 
 }
-
+input{
+    background-color: #fcf5eb;
+}
+textarea{
+    background-color: #fcf5eb;
+}
 .container{
 
     float: left;

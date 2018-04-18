@@ -24,22 +24,60 @@ body{
 
 }
 
-.jobdesc {
+.JobNav {
 
     grid-column: 2/3;
-    grid-row: 2/4;
+    grid-row: 2/3;
     color: black;
-    overflow: auto;
+    text-align: left;
+    width: auto;
+    padding:10px;
+
 
 }
+nav{
+    background-color:rgb(242, 242, 242);
 
-.addjob {
+    width: auto;
+    border-radius: 12px;
+    border: 2px solid #B7AFA3;
 
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
+}
+ul{
 
+    overflow: scroll;
+    width: auto;
+    max-height: 350px;
+    -webkit-overflow-scrolling: touch;
+    border: 2px solid #e8e8e8;
+    top: 20px;
+    left:20px;
+    right:20px;
+    margin:0;
+    padding:0;
+    border-radius: 12px;
 
+}
+li{
+    min-width: fit-content;
+
+    width: auto;
+    padding: 10px 20px;
+    border-bottom: 1px solid #B7AFA3;
+    background-color: #fdf9f3;
+
+}
+ul li:nth-child(odd){
+    background-color: #fcf5eb;
+
+}
+.LoggedIn{
+    grid-column: 3/4;
+    grid-row: 2/3
+}
+.JobAdd{
+    grid-column:3/4;
+    grid-row:2/3;
 }
 
 .username {

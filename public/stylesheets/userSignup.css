@@ -32,7 +32,12 @@ body{
 
 }
 
-
+input{
+    background-color: #fcf5eb;
+}
+textarea{
+    background-color: #fcf5eb;
+}
 .userInfo {
 
     grid-column: 2/3;

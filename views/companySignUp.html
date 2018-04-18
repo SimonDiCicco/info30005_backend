@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>c</title>
-    <link rel="stylesheet" type="text/css" href="../public/stylesheets/c.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/companySignUp.css" media="screen">
+    <script src="../app.js"></script>
 
 </head>
 
@@ -20,15 +21,18 @@
     </div>
 
     <div class = "buttonLinks">
-        <button name = "homeButton" type = "button">Home</button>
+        <button name = "homeButton" type = "button" onclick="goHome();">Home</button>
         <br>
-        <button name ="jobsButton" type = "button">Jobs</button>
+        <button name ="jobsButton" type = "button" onclick="goJobs();">Jobs</button>
         <br>
-        <button name = "companiesButton" type = "button">Companies</button>
+        <button name = "companiesButton" type = "button" onclick="goCompanies();">Companies</button>
         <br>
-        <button name = "trainingButton" type = "button">Training</button>
+        <button name = "trainingButton" type = "button" onclick="goTraining();">Training</button>
         <br>
-        <button name = "userButton" type = "button">User Experiences</button>
+        <button name = "userButton" type = "button" onclick="goExperience();">User Experiences</button>
+
+
+
     </div>
 
     <div class= "jobdesc">
@@ -45,20 +49,20 @@
         <h3>How supportive are you with disabilities?</h3>
         <form>
 
-            <h4>Wheelchair access<input type="checkbox" id="checkboxes"/>
-                Braile on signs<input type="checkbox" id="checkboxes"/>
-                Tactile surfaces where crucial<input type ="checkbox" id="checkboxes"/>
+            <h4>Wheelchair access<input type="checkbox" id="checkboxes1"/>
+                Braile on signs<input type="checkbox" id="checkboxes2"/>
+                Tactile surfaces where crucial<input type ="checkbox" id="checkboxes3"/>
             </h4>
 
             <br>
-            <h4>Quiet spaces<input type="checkbox" id="checkboxes"/>
-            Support and training<input type="checkbox" id="checkboxes"/>
+            <h4>Quiet spaces<input type="checkbox" id="checkboxes4"/>
+            Support and training<input type="checkbox" id="checkboxes5"/>
             </h4>
 
 
         </form>
         <div class="buttonLinks">
-            <button name = "submit" type = "button">Sign Up</button>
+            <button onclick="goJobs();" name = "submit" type = "button">Sign Up</button>
         </div>
     </div>
 
