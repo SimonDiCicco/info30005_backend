@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>User Signup</title>
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/userSignup.css" media="screen">
+    <script src="../app.js"></script>
+</head>
+
+<body>
+<div class = "page">
+
+    <div class = "container">
+        <h1>The Frontier</h1>
+        <h2>Connecting disability to the world!</h2>
+
+    </div>
+
+    <div class = "buttonLinks">
+        <button name = "homeButton" type = "button" onclick="goHome();">Home</button>
+        <br>
+        <button name ="jobsButton" type = "button" onclick="goJobs();">Jobs</button>
+        <br>
+        <button name = "companiesButton" type = "button" onclick="goCompanies();">Companies</button>
+        <br>
+        <button name = "trainingButton" type = "button" onclick="goTraining();">Training</button>
+        <br>
+        <button name = "userButton" type = "button" onclick="goExperience();">User Experiences</button>
+    </div>
+
+    <div class= "userInfo">
+        <form>
+            <table>
+                <tr>
+                    <td>First Name:</td>
+                    <td>Last Name:</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="firstName" class="nameBox"></td>
+                    <td><input type="text" name="lastName" class="nameBox"></td>
+                </tr>
+            </table>
+            <div class = "paddingtext">
+                <h3> Email</h3>
+                <input type="text" name="email" class="emailBox">
+            </div>
+            <div class = "paddingtext">
+                <h3>Interests:</h3>
+            </div>
+            <textarea type="text" id="interests" class="descBox"></textarea>
+            <div class = "paddingtext">
+                <h3>Experiences:</h3>
+            </div>
+            <textarea type="text" id="experience" class="descBox"></textarea>
+            <div class = "paddingtext">
+                <h3>Describe your disability:</h3>
+            </div>
+            <textarea type="text" id="disability" rows="4" cols="60"></textarea>
+        </form>
+    </div>
+
+    <div class="uploadAndSubmit">
+        <div class="buttonLinks">
+            <img src="../public/media/emptyProfile.png" class = "profilePictures">
+            <button name = "image" type = "button">Upload Image</button>
+        </div>
+        <div class="buttonLinks">
+            <button name = "submit" type = "button">Sign Up</button>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
