@@ -26,11 +26,12 @@ app.listen(PORT,function(){
     console.log('server started');
 
 });
+/*
 window.onclick=function(event){
 
     res.render('ComingSoon.ejs')
 
-};
+};*/
 /***********************************************************************/
 //Local Data storage
 /*
