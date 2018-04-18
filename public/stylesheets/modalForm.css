@@ -1,0 +1,46 @@
+
+.modalForm{
+    display: none;
+
+    position: absolute;
+    left: 40%;
+    top:40%;
+    width:20%;
+    height:40%;
+    z-index:1;
+    overflow:auto;
+    background-color: rgb(242, 242, 242);
+    border-width: 5px;
+    border-radius: 12px;
+    border-color: black;
+
+}
+.popup{
+    padding-top: 20%;
+    padding-left: 10%;
+
+
+
+}
+
+
+
+.modalForm-content{
+    background-color: #f2f2f2;
+    margin:5px auto;
+    width:70%;
+}
+.close {
+    position: absolute;
+    right:25px;
+    top:0;
+    color: red;
+    cursor: pointer;
+    text-decoration: none;
+    content: 'X';
+
+
+}
+
+
+

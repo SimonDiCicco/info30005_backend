@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Lato:300,400,700');
+
+html{
+    height:50%;
+
+
+}
+.page{
+    display:grid;
+    grid-template-columns:25% 25% 50%;
+    grid-template-rows: 25% 10% 65%;
+}
+
+
+
+body{
+    background-color: lightblue;
+
+    background-size: cover;
+
+
+
+}
+
+.container{
+    grid-column: 1/4;
+    grid-row: 1/2;
+    text-align: center;
+    color: black;
+
+}
+.buttonLinks{
+    grid-column: 1/2;
+    grid-row: 2/4;
+    padding: 10px;
+
+
+}
+.JobNav{
+    grid-column: 2/3;
+    grid-row: 3/4;
+    text-align: left;
+
+
+}
+nav{
+    background-color:rgb(242, 242, 242);
+
+    width: auto;
+    border-radius: 12px;
+    border: 2px solid #B7AFA3;
+
+}
+ul{
+
+    overflow: scroll;
+    width: auto;
+    max-height: 400px;
+    -webkit-overflow-scrolling: touch;
+    border: 2px solid #e8e8e8;
+    top: 20px;
+    left:20px;
+    right:20px;
+    margin:0;
+    padding:0;
+    border-radius: 12px;
+
+}
+li{
+    min-width: fit-content;
+
+    width: auto;
+    padding: 10px 20px;
+    border-bottom: 1px solid #B7AFA3;
+    background-color: #fcf3e7;
+
+}
+ul li:nth-child(odd){
+    background-color: #fcf5eb;
+
+}
+button {
+
+    display: block;
+    background-color: antiquewhite;
+    cursor: pointer;
+    border: 3px solid #B7AFA3;
+    font-size: 1.5em;
+    border-radius: 8px;
+    width: 200px;
+    height: 75px;
+}
+
+button:hover{
+    background-color: #B7AFA3 ;
+    color: white;
+}
+button:active{
+    transform: translateY(4px) ;
+}
+
+h1 {
+    background-color: antiquewhite;
+    border: 5px solid #B7AFA3;
+    font-family: 'Abril Fatface', cursive;
+    font-weight: 400;
+    font-size: 4em;
+
+}
+
+h2 {
+    font-family: 'lato', 'sans-serif';
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.75em;
+    line-height: 1px;
+}
+
+
+h3 {
+
+
+
+    font-family: 'Lato', 'Sans-serif', serif;
+    font-weight: 400;
+    font-size: 1em;
+
+}
