@@ -22,7 +22,10 @@ app.get('/home',function(req,res){
     res.render('Home.ejs');
 });
 
+app.listen(PORT,function(){
+    console.log('server started');
 
+});
 window.onclick=function(event){
 
     res.render('ComingSoon.ejs')
@@ -57,19 +60,7 @@ function companySignUp(){
 
 
 function login(){
-    console.log(username);
-        var uname = document.getElementById("uname").value;
-        var pword = document.getElementById("pword").value;
-        console.log(uname);
-        console.log(pword);
-
-        for(var i = 0; i<username.length;i++){
-            if (username[i] === uname){
-                if(password[i] === pword){
-                    goJobs();
-                }
-            }
-        }
+    goJobs();
 
 }
 function clearContent(id){
@@ -153,7 +144,4 @@ function readURL(input) {
 
 
 //Listen for heroku server port
-app.listen(PORT,function(){
-    console.log('server started');
 
-});
