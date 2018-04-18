@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>user Profile</title>
+    <title>Company Profile</title>
     <link rel="stylesheet" type="text/css" href="../public/stylesheets/profile.css" media="screen">
 </head>
 <body>
+
 
 
 
@@ -33,7 +34,7 @@
     </div>
 
     <div class="JobNav">
-        <label><h4>Jobs Applied For:</h4></label>
+        <label><h4>Jobs Posted:</h4></label>
         <nav>
             <ul>
                 <li>Job Title <br>Job Description <br><br> Apply</li>
@@ -49,28 +50,32 @@
         </nav>
     </div>
 
-    <div class="User">
+    <div class="Company">
         <div class = "Details">
             <!--id to be used to get data from server-->
-            <label id="UserFullName"><h3><u>FirstName LastName</u></h3></label>
+            <label id="CompanyName"><h3><u>Company Name</u></h3></label>
             <figure>
                 <img src="../public/media/avatar.png" alt="Profile picture" width="70" height="70">
             </figure>
         </div>
-        <div class="userInformation">
+        <div class="CompanyInformation">
 
-            <label><h4>Interests:</h4></label>
+            <label><h4>Description:</h4></label>
             <!--id to be used to get data from server-->
-            <textarea readonly id="userInterests" rows="4" cols="50">
-                Interests go here
+            <textarea readonly id="userInterests" rows="4" cols="80">
+                Description goes here
 
             </textarea>
-            <label><h4>Experiences:</h4></label>
+            <label><h4>Workplace Rating:</h4></label>
             <!--id to be used to get data from server-->
-            <textarea readonly id="userExperience" rows="4" cols="50">
-                Experiences go here
+            <figure>
+                <img src="../public/media/fullstar.png" alt="1 full star" width="50" height="50">
+                <img src="../public/media/fullstar.png" alt="1 full star" width="50" height="50">
+                <img src="../public/media/fullstar.png" alt="1 full star" width="50" height="50">
+                <img src="../public/media/emptystar.png" alt="1 full star" width="50" height="50">
+                <img src="../public/media/emptystar.png" alt="1 full star" width="50" height="50">
+            </figure>
 
-            </textarea>
 
         </div>
 
@@ -80,6 +85,8 @@
 
 
 
+
+</body>
 
 </body>
 </html>

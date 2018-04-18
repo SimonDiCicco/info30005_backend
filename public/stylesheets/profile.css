@@ -5,13 +5,12 @@ html{
 
 
 }
-.page{
-    display:grid;
-    grid-template-columns:25% 25% 50%;
+.page {
+    display: grid;
+    grid-template-columns: 20% 30% 50%;
     grid-template-rows: 25% 10% 65%;
+
 }
-
-
 
 body{
     background-color: lightblue;
@@ -37,9 +36,11 @@ body{
 
 }
 .JobNav{
+   grid-row: 2/3;
     grid-column: 2/3;
-    grid-row: 3/4;
     text-align: left;
+    padding: 10px;
+
 
 
 }
@@ -55,7 +56,7 @@ ul{
 
     overflow: scroll;
     width: auto;
-    max-height: 400px;
+    max-height: 350px;
     -webkit-overflow-scrolling: touch;
     border: 2px solid #e8e8e8;
     top: 20px;
@@ -77,6 +78,34 @@ li{
 }
 ul li:nth-child(odd){
     background-color: #fcf5eb;
+
+}
+textarea{
+    background-color: #fcf3e7;
+}
+
+.User{
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+.Company{
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+.userInformation{
+    grid-column: 3/4;
+    grid-row:3/4;
+    padding:5px;
+    margin: 0px;
+    position: relative;
+
+}
+.companyInformation{
+    grid-column: 3/4;
+    grid-row:3/4;
+    padding:5px;
+    margin: 0px;
+    position: relative;
 
 }
 button {
@@ -122,7 +151,14 @@ h3 {
 
 
     font-family: 'Lato', 'Sans-serif', serif;
-    font-weight: 400;
-    font-size: 1em;
+    font-weight: 600;
+    font-size: 1.5em;
 
 }
+h4{
+    font-family: 'Lato', 'Sans-serif', serif;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+
