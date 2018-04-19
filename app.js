@@ -57,7 +57,7 @@ app.get('/userSignup', function(req,res){
 });
 
 app.get('/companySignup', function(req,res){
-    res.render('companySignup.ejs');
+    res.render('companySignUp.ejs');
 });
 
 app.get('/jobs', function(req,res){
