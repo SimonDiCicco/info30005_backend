@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>b</title>
+    <title>Jobs</title>
+
+
     <link rel="stylesheet" type="text/css" href="../stylesheets/jobs.css" media="screen">
+
+
 
 </head>
 
@@ -11,141 +15,144 @@
 <!-- Split segments into about 20 60 20 -->
 
 <body>
-    <div class = "page">
+<div class = "page">
 
-        <div class = "container">
-            <h1>The Frontier</h1>
-            <h2>Connecting disability to the world!</h2>
-
-
-        </div>
+    <div class = "container">
+        <h1>The Frontier</h1>
+        <h2>Connecting disability to the world!</h2>
 
 
-            <div class = "JobAdd">
-                <br><br>
-                <br><br>
-                <br><br>
-                <button onclick= "addJob();">Add Job</button>
-            </div>
-
-        <div class = "buttonLinks">
-            <button name = "homeButton" type = "button" onclick="goHome();">Home</button>
-            <br>
-            <button name ="jobsButton" type = "button" onclick="goJobs();">Jobs</button>
-            <br>
-            <button name = "companiesButton" type = "button" onclick="goCompanies();">Companies</button>
-            <br>
-            <button name = "trainingButton" type = "button" onclick="goTraining();">Training</button>
-            <br>
-            <button name = "userButton" type = "button" onclick="goExperience();">User Experiences</button>
-
-
-
-        </div>
-
-        <div class="JobNav">
-            <label><h4>Jobs Posted:</h4></label>
-            <nav>
-                <ul>
-                    <li><b>HR Assistant, Ernst and Young</b><br>Scanning and printing of documents and council approved plans <br><br> Apply</li>
-                    <li><b>Librarian, Hampshire Council </b><br>Sorting of books, magazines and DVDs. Handling customer questions about location of books within the library <br><br> Apply</li>
-                    <li><b>Sales attendant, Big W </b><br>Facing of shelves, replenishment of stock and customer service. <br><br> Apply</li>
-                    <li><b>Data Entry, Tennis Australia</b><br>Entry of generic sports data, based on input and real life game-play. <br><br> Apply</li>
-                    <li><b>Pick Packer, CardBoard Enthusiasts</b> <br>Pick items based on a checklist order, pick at your own rate, accuracy is important. <br><br> Apply</li>
-                    <li>Full Time truck loader <br>Assist in preparing pallets for transportation. This involves wrapping them and ensuring the contents are stable.<br><br>Apply </li>
-
-
-                </ul>
-            </nav>
-        </div>
-        <div class="LoggedIn">
-            <label><h4>Logged in as: </h4></label><label id="UsernameLink" onclick="goToProfile(this.id);"><h4><u>CardBoard Enthusiasts</u></h4></label>
-        </div>
     </div>
 
-    <script type="text/javascript">
-        function userSignUp(){
-            /*
-            var uname = document.getElementById("newUsername").value;
-            var pword = document.getElementById("newPassword").value;
 
-            this.username.push(uname);
-            this.password.push(pword);
-            console.log(this.username);
-            console.log(this.password);
-        */
-            goJobs();
-
-        }
-
-        function companySignUp(){
-            /*get data from html add to arraylist open newpage with usernamespecified*/
-        }
+    <div class = "JobAdd">
+        <br><br>
+        <br><br>
+        <br><br>
+        <button onclick= "addJob();">Add Job</button>
+    </div>
 
 
-        function login(){
-            goJobs();
 
-        }
-        function clearContent(id){
-            document.getElementById(id).value = '';
-        }
-        function addJob(){
-            window.location = 'jobPost';    // TODO change
-        }
 
-        function postJob(){
+    <div class = "buttonLinks">
+        <button name = "homeButton" type = "button" onclick="goHome();">Home</button>
+        <br>
+        <button name ="jobsButton" type = "button" onclick="goJobs();">Jobs</button>
+        <br>
+        <button name = "companiesButton" type = "button" onclick="goCompanies();">Companies</button>
+        <br>
+        <button name = "trainingButton" type = "button" onclick="goTraining();">Training</button>
+        <br>
+        <button name = "userButton" type = "button" onclick="goExperience();">User Experiences</button>
 
-            var job = {
-                title: document.getElementById('jobTitle').valueOf(),
-                description: document.getElementById('jobDesc').valueOf(),
-                email: document.getElementById('jobEmail').valueOf()
-            };
-            //jobs.push(job);
-            window.location = 'companyProfile';
-        }
-        /* Submit and save data entered*/
 
-        function goHome(){
-            console.log('Go home.');
-            window.location = 'home';
-        }
-        function goJobs(){
-            window.location = 'jobs';
-        }
-        function goCompanies(){
-            window.location = 'companies';
-        }
-        function goTraining(){
-            window.location = 'training';
-        }
-        function goExperience(){
-            window.location = 'experiences';
-        }
-        function goUserSignup() {
-            window.location = 'userSignup';
-        }
-        function goCompanySignup(){
-            window.location = 'companySignup';
-        }
-        function goToProfile(elementid){
-            //check username in db
-            //username = document.getElementById(elementid).valueOf();
-            //if user go to userPage
-            if((Math.floor(Math.random() *2)+1) === 1){
-                window.location='userProfile'
-            }else{
-                window.location ='companyProfile';
-            }
 
-            //if company go to companyPage
-            //window.location='companyProfile';
-        }
-        function goToCompanyProfile(){
+    </div>
+    <div class="wrapper">
+        <div class="box">
+            <b><h3>HR Assistant, Ernst and Young</h3></b><h4>Scanning and printing of documents and council approved plans.</h4>
+        </div>
+        <div class="box">
+            <b><h3>Librarian, Hampshire Council</h3></b><h4>Sorting of books, magazines and DVDs. Handling customer questions about location of books within the library.</h4>
+        </div>
+        <div class="box">
+            <b><h3>Sales attendant, Big W</h3></b><h4>Facing of shelves, replenishment of stock and customer service.</h4>
+        </div>
+        <div class="box">
+            <b><h3>Data Entry, Tennis Australia</h3></b><h4>Entry of generic sports data, based on input and real life game-play.</h4>
+        </div>
+        <div class="box">
+            <b><h3>Pick Packer, CardBoard Enthusiasts</h3></b><h4>Pick items based on a checklist order, pick at your own rate, accuracy is important.</h4>
+        </div>
+        <div class="box">
+            <b><h3>Full Time truck loader</h3></b><h4>Assist in preparing pallets for transportation. This involves wrapping them and ensuring the contents are stable.</h4>
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <div class="LoggedIn">
+        <label><h4>Logged in as: </h4></label><label id="UsernameLink" onclick="goToProfile(this.id);"><h4><u>CardBoard Enthusiasts</u></h4></label>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function userSignUp(){
+        /*
+        var uname = document.getElementById("newUsername").value;
+        var pword = document.getElementById("newPassword").value;
+        this.username.push(uname);
+        this.password.push(pword);
+        console.log(this.username);
+        console.log(this.password);
+    */
+        goJobs();
+    }
+    function companySignUp(){
+        /*get data from html add to arraylist open newpage with usernamespecified*/
+    }
+    function login(){
+        goJobs();
+    }
+    function clearContent(id){
+        document.getElementById(id).value = '';
+    }
+    function addJob(){
+        window.location = 'jobPost';    // TODO change
+    }
+    function postJob(){
+        var job = {
+            title: document.getElementById('jobTitle').valueOf(),
+            description: document.getElementById('jobDesc').valueOf(),
+            email: document.getElementById('jobEmail').valueOf()
+        };
+        //jobs.push(job);
+        window.location = 'companyProfile';
+    }
+    /* Submit and save data entered*/
+    function goHome(){
+        console.log('Go home.');
+        window.location = 'home';
+    }
+    function goJobs(){
+        window.location = 'jobs';
+    }
+    function goCompanies(){
+        window.location = 'companies';
+    }
+    function goTraining(){
+        window.location = 'training';
+    }
+    function goExperience(){
+        window.location = 'experiences';
+    }
+    function goUserSignup() {
+        window.location = 'userSignup';
+    }
+    function goCompanySignup(){
+        window.location = 'companySignup';
+    }
+    function goToProfile(elementid){
+        //check username in db
+        //username = document.getElementById(elementid).valueOf();
+        //if user go to userPage
+        if((Math.floor(Math.random() *2)+1) === 1){
+            window.location='userProfile'
+        }else{
             window.location ='companyProfile';
         }
-
-    </script>
+        //if company go to companyPage
+        //window.location='companyProfile';
+    }
+    function goToCompanyProfile(){
+        window.location ='companyProfile';
+    }
+</script>
 
 </body>
 </html>
