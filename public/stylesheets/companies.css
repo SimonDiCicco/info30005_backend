@@ -22,7 +22,7 @@ html{
 
     grid-auto-rows: 270px;
 }
-.box{
+.tile{
     background-color: #fdf9f3;
     cursor: pointer;
     border: #B7AFA3 2px solid;
@@ -33,11 +33,11 @@ html{
 
 }
 
-.box:hover{
-    background-color: #f2f2f2 ;
+.tile:hover{
+    background-color: #e5e5e5 ;
 
 }
-.box:active{
+.tile:active{
     transform: translateY(4px) ;
 }
 
