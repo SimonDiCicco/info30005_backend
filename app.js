@@ -13,14 +13,71 @@ app.use(express.static('public'));
 const PORT = process.env.PORT || 3000;
 /*******************************************************************/
 //Coming soon page render
-app.get('/',function(req,res){
+app.get('/', function(req,res){
     res.render('ComingSoon.ejs');
 });
 
-app.get('/home',function(req,res){
 
+/*
+Data model
+----------
+name: string
+interests: string
+experiences: string
+profPicURL: string
+jobs: [{// put details here}, {}, {}, ...]
+*/
+
+
+const fakeUsers = [{
+    name: "John Smith",
+    interests: "I love cycling, and spending time with family.",
+    experiences: " I have have some experience as a sales attendant at Big W."
+}];
+
+
+app.get('/home', function(req,res){
     res.render('Home.ejs');
 });
+
+app.get('/companies', function(req,res){
+    res.render('companies.ejs');
+});
+
+app.get('/training', function(req,res){
+    res.render('training.ejs');
+});
+
+app.get('/experiences', function(req,res){
+    res.render('experiences.ejs');
+});
+
+app.get('/userSignup', function(req,res){
+    res.render('userSignup.ejs');
+});
+
+app.get('/companySignup', function(req,res){
+    res.render('companySignup.ejs');
+});
+
+app.get('/jobs', function(req,res){
+    res.render('jobs.ejs');
+});
+app.get('/jobPost', function(req,res){
+    res.render('JobPost.ejs');
+});
+app.get('/companyProfile', function(req,res){
+    res.render('companyProfile.ejs');
+});
+
+app.get('/users/:profileID', function(req, res) {
+   console.log('request for profileID ' + req.params.profileID);
+
+   res.render('userProfile.ejs', {
+       user: fakeUsers[0]
+   });
+});
+
 
 app.listen(PORT,function(){
     console.log('server started');
@@ -39,89 +96,7 @@ username = ["admin"];
 password = ["password"];
 */
 /******************************************************************/
-function userSignUp(){
-    /*
-    var uname = document.getElementById("newUsername").value;
-    var pword = document.getElementById("newPassword").value;
-
-    this.username.push(uname);
-    this.password.push(pword);
-    console.log(this.username);
-    console.log(this.password);
-*/
-    goJobs();
-
-}
-
-function companySignUp(){
-/*get data from html add to arraylist open newpage with usernamespecified*/
-}
-
-
-
-
-function login(){
-    goJobs();
-
-}
-function clearContent(id){
-    document.getElementById(id).value = '';
-}
-function addJob(){
-    window.location = 'JobPost.ejs';
-}
-
-function postJob(){
-
-    var job = {
-        title: document.getElementById('jobTitle').valueOf(),
-        description: document.getElementById('jobDesc').valueOf(),
-        email: document.getElementById('jobEmail').valueOf()
-    };
-    //jobs.push(job);
-    window.location = 'companyProfile.ejs';
-}
-    /* Submit and save data entered*/
-
-function goHome(){
-    window.location = 'Home.ejs';
-
-}
-function goJobs(){
-    window.location = 'jobs.ejs';
-}
-function goCompanies(){
-    window.location = 'companies.ejs';
-}
-function goTraining(){
-    window.location = 'training.ejs';
-}
-function goExperience(){
-    window.location = 'experiences.ejs';
-
-}
-function goUserSignup() {
-    window.location = 'userSignup.ejs';
-}
-function goCompanySignup(){
-    window.location = 'companySignup.html';
-}
-function goToProfile(elementid){
-    //check username in db
-    //username = document.getElementById(elementid).valueOf();
-    //if user go to userPage
-    if((Math.floor(Math.random() *2)+1) === 1){
-        window.location='userProfile.ejs'
-    }else{
-        window.location ='companyProfile.ejs';
-    }
-
-    //if company go to companyPage
-    //window.location='companyProfile';
-}
-function goToCompanyProfile(){
-    window.location ='companyProfile.ejs';
-}
+//
 
 //Uploading Images
 //Reading and uploading an image file

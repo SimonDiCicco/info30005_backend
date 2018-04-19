@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>user Profile</title>
     <link rel="stylesheet" type="text/css" href="../stylesheets/profile.css" media="screen">
-    <script src="../app.js"></script>
+    <!--<script src="../app.js"></script>-->
 </head>
 <body>
 
@@ -49,9 +49,9 @@
     <div class="User">
         <div class = "Details">
             <!--id to be used to get data from server-->
-            <label id="UserFullName"><h3><u>John Schmuf</u></h3></label>
+            <label id="UserFullName"><h3><u><%= user.name %></u></h3></label>
             <figure>
-                <img src="../public/media/avatar.png" alt="Profile picture" width="70" height="70">
+                <img src="../media/avatar.png" alt="Profile picture" width="70" height="70">
             </figure>
         </div>
         <div class="userInformation">

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Home Page</title>
     <link rel="stylesheet" type="text/css" href="../stylesheets/home.css" media="screen">
-    <script  src="../app.js"></script>
 </head>
 <body>
     <div class = "page">
@@ -49,9 +48,9 @@
             <span id="slider3"></span>
 
             <div class = "imageHolder">
-                <img src="../public/media/feelsgoos1.jpg"/>
-                <img src="../public/media/doorwayopen.jpg"/>
-                <img src="../public/media/inspo.jpg"/>
+                <img src="media/feelsgoos1.jpg"/>
+                <img src="media/doorwayopen.jpg"/>
+                <img src="media/inspo.jpg"/>
             </div>
 
             <div class = "buttonHolder">
@@ -93,5 +92,88 @@
 
 
 
+    <script type="text/javascript">
+        function userSignUp(){
+            /*
+            var uname = document.getElementById("newUsername").value;
+            var pword = document.getElementById("newPassword").value;
+
+            this.username.push(uname);
+            this.password.push(pword);
+            console.log(this.username);
+            console.log(this.password);
+        */
+            goJobs();
+
+        }
+
+        function companySignUp(){
+        /*get data from html add to arraylist open newpage with usernamespecified*/
+        }
+
+
+        function login(){
+            goJobs();
+
+        }
+        function clearContent(id){
+            document.getElementById(id).value = '';
+        }
+        function addJob(){
+            window.location = 'jobs';    // TODO change
+        }
+
+        function postJob(){
+
+            var job = {
+                title: document.getElementById('jobTitle').valueOf(),
+                description: document.getElementById('jobDesc').valueOf(),
+                email: document.getElementById('jobEmail').valueOf()
+            };
+            //jobs.push(job);
+            window.location = 'companyProfile';
+        }
+            /* Submit and save data entered*/
+
+        function goHome(){
+            console.log('Go home.');
+            window.location = 'home';
+        }
+        function goJobs(){
+            window.location = 'jobs';
+        }
+        function goCompanies(){
+            window.location = 'companies';
+        }
+        function goTraining(){
+            window.location = 'training';
+        }
+        function goExperience(){
+            window.location = 'experiences';
+        }
+        function goUserSignup() {
+            window.location = 'userSignup';
+        }
+        function goCompanySignup(){
+            window.location = 'companySignup';
+        }
+        function goToProfile(elementid){
+            //check username in db
+            //username = document.getElementById(elementid).valueOf();
+            //if user go to userPage
+            if((Math.floor(Math.random() *2)+1) === 1){
+                window.location='userProfile'
+            }else{
+                window.location ='companyProfile';
+            }
+
+            //if company go to companyPage
+            //window.location='companyProfile';
+        }
+        function goToCompanyProfile(){
+            window.location ='companyProfile';
+        }
+
+    </script>
 </body>
 </html>
