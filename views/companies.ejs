@@ -70,7 +70,7 @@
     </div>
 
 </div>
-</div>
+
 
 <script type="text/javascript">
     function userSignUp(){
@@ -86,7 +86,16 @@
         goJobs();
 
     }
+    function applyJob(id){
+        if(document.getElementById(id).style.backgroundColor === '#e5e5e5'){
+            alert("You have already applied for this job!!");
+        }else{
+            alert("Thank you for applying." +
+                "Your details will be passed on!");
+            document.getElementById(id).style.backgroundColor= '#e5e5e5';
+        }
 
+    }
     function companySignUp(){
         /*get data from html add to arraylist open newpage with usernamespecified*/
     }
@@ -99,6 +108,7 @@
     function clearContent(id){
         document.getElementById(id).value = '';
     }
+
     function addJob(){
         window.location = 'jobs';    // TODO change
     }
@@ -132,10 +142,10 @@
         window.location = 'experiences';
     }
     function goUserSignup() {
-        window.location = 'userSignup';
+        window.location = 'userSignUp';
     }
     function goCompanySignup(){
-        window.location = 'companySignup';
+        window.location = 'companySignUp';
     }
     function goToProfile(elementid){
         //check username in db

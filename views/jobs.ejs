@@ -29,14 +29,14 @@
         <br><br>
         <br><br>
         <br><br>
-        <button onclick= "addJob();">Add Job</button>
+        <button type="button" onclick="addJob();">Add Job</button>
     </div>
 
 
 
 
     <div class = "buttonLinks">
-        <button name = "homeButton" type = "button" onclick="goHome();">Home</button>
+        <button id="jobsToHome" name = "homeButton" type = "button"  value="button text">Home</button>
         <br>
         <button name ="jobsButton" type = "button" onclick="goJobs();">Jobs</button>
         <br>
@@ -45,28 +45,26 @@
         <button name = "trainingButton" type = "button" onclick="goTraining();">Training</button>
         <br>
         <button name = "userButton" type = "button" onclick="goExperience();">User Experiences</button>
-
-
-
     </div>
+
     <div class="wrapper">
         <div class="tile" id="jobTile1" onclick="applyJob(this.id);">
-            <b><h3>HR Assistant, Ernst and Young</h3></b><h4>Scanning and printing of documents and council approved plans.</h4>
+            <h3>HR Assistant, Ernst and Young</h3><h4>Scanning and printing of documents and council approved plans.</h4>
         </div>
         <div class="tile" id="jobTile2" onclick="applyJob(this.id);">
-            <b><h3>Librarian, Hampshire Council</h3></b><h4>Sorting of books, magazines and DVDs. Handling customer questions about location of books within the library.</h4>
+            <h3>Librarian, Hampshire Council</h3><h4>Sorting of books, magazines and DVDs. Handling customer questions about location of books within the library.</h4>
         </div>
         <div class="tile" id="jobTile3" onclick="applyJob(this.id);">
-            <b><h3>Sales attendant, Big W</h3></b><h4>Facing of shelves, replenishment of stock and customer service.</h4>
+            <h3>Sales attendant, Big W</h3><h4>Facing of shelves, replenishment of stock and customer service.</h4>
         </div>
         <div class="tile" id="jobTile4" onclick="applyJob(this.id);">
-            <b><h3>Data Entry, Tennis Australia</h3></b><h4>Entry of generic sports data, based on input and real life game-play.</h4>
+            <h3>Data Entry, Tennis Australia</h3><h4>Entry of generic sports data, based on input and real life game-play.</h4>
         </div>
         <div class="tile" id="jobTile5" onclick="applyJob(this.id);">
-            <b><h3>Pick Packer, CardBoard Enthusiasts</h3></b><h4>Pick items based on a checklist order, pick at your own rate, accuracy is important.</h4>
+            <h3>Pick Packer, CardBoard Enthusiasts</h3><h4>Pick items based on a checklist order, pick at your own rate, accuracy is important.</h4>
         </div>
         <div class="tile" id="jobTile6" onclick="applyJob(this.id);">
-            <b><h3>Full Time truck loader</h3></b><h4>Assist in preparing pallets for transportation. This involves wrapping them and ensuring the contents are stable.</h4>
+            <h3>Full Time truck loader</h3><h4>Assist in preparing pallets for transportation. This involves wrapping them and ensuring the contents are stable.</h4>
         </div>
 
 
@@ -77,7 +75,7 @@
 
 
     <div class="LoggedIn">
-        <label><h4>Logged in as: </h4></label><label id="UsernameLink" onclick="goToProfile(this.id);"><h4><u>CardBoard Enthusiasts</u></h4></label>
+        <h4><label>Logged in as:</label></h4><h4><label id="UsernameLink" onclick="goToProfile(this.id);">CardBoard Enthusiasts</label></h4>
     </div>
 </div>
 
@@ -86,43 +84,54 @@
         /*
         var uname = document.getElementById("newUsername").value;
         var pword = document.getElementById("newPassword").value;
+
         this.username.push(uname);
         this.password.push(pword);
         console.log(this.username);
         console.log(this.password);
     */
         goJobs();
+
+    }
+    function applyJob(id){
+        if(document.getElementById(id).style.backgroundColor === '#e5e5e5'){
+            alert("You have already applied for this job!!");
+        }else{
+            alert("Thank you for applying." +
+                "Your details will be passed on!");
+            document.getElementById(id).style.backgroundColor= '#e5e5e5';
+        }
+
     }
     function companySignUp(){
         /*get data from html add to arraylist open newpage with usernamespecified*/
     }
+
+
     function login(){
         goJobs();
+
     }
     function clearContent(id){
         document.getElementById(id).value = '';
     }
-    function applyJob(id){
-        alert("Thank you for applying." +
-            "Your details will be passed on!");
-        document.getElementById(id).style.backgroundColor= '#e5e5e5';
 
-    }
     function addJob(){
-        window.location = 'jobPost';    // TODO change
+        window.location = 'jobs';    // TODO change
     }
+
     function postJob(){
+
         var job = {
             title: document.getElementById('jobTitle').valueOf(),
             description: document.getElementById('jobDesc').valueOf(),
-            email: document.getElementById('jobEmail').valueOf();
-
+            email: document.getElementById('jobEmail').valueOf()
         };
-        //add job to job page tiles by writing html
         //jobs.push(job);
         window.location = 'companyProfile';
     }
     /* Submit and save data entered*/
+
     function goHome(){
         console.log('Go home.');
         window.location = 'home';
@@ -140,10 +149,10 @@
         window.location = 'experiences';
     }
     function goUserSignup() {
-        window.location = 'userSignup';
+        window.location = 'userSignUp';
     }
     function goCompanySignup(){
-        window.location = 'companySignup';
+        window.location = 'companySignUp';
     }
     function goToProfile(elementid){
         //check username in db
@@ -154,12 +163,14 @@
         }else{
             window.location ='companyProfile';
         }
+
         //if company go to companyPage
         //window.location='companyProfile';
     }
     function goToCompanyProfile(){
         window.location ='companyProfile';
     }
+
 </script>
 
 </body>
