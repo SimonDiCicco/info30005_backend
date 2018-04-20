@@ -29,14 +29,14 @@
         <br><br>
         <br><br>
         <br><br>
-        <button type="button" onclick="addJob();">Add Job</button>
+        <button type="button" onclick="goJobAdd();">Add Job</button>
     </div>
 
 
 
 
     <div class = "buttonLinks">
-        <button id="jobsToHome" name = "homeButton" type = "button"  value="button text">Home</button>
+        <button id="jobsToHome" name = "homeButton" type = "button" onclick="goHome();">Home</button>
         <br>
         <button name ="jobsButton" type = "button" onclick="goJobs();">Jobs</button>
         <br>
@@ -80,6 +80,9 @@
 </div>
 
 <script type="text/javascript">
+    function goJobAdd(){
+        window.location = 'jobPost';
+    }
     function userSignUp(){
         /*
         var uname = document.getElementById("newUsername").value;

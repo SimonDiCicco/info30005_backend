@@ -34,23 +34,16 @@
 
     </div>
 
-    <div class="JobNav">
-        <label><h4>Jobs Posted:</h4></label>
-        <nav>
-            <ul>
-                <li><b>Pick Packer, CardBoard Enthusiasts</b> <br>Pick items based on a checklist order, pick at your own rate, accuracy is important.</li>
-                <li>Full Time truck loader <br>Assist in preparing pallets for transportation. This involves wrapping them and ensuring the contents are stable. </li>
+    <div class="wrapper">
+        <div class="tile" id="jobTile1" onclick="applyJob(this.id);">
+            <h3><%= job.title%></h3><h4><%= job.description%></h4>
+        </div>
 
-
-
-            </ul>
-        </nav>
     </div>
-
     <div class="Company">
         <div class = "Details">
             <!--id to be used to get data from server-->
-            <label id="CompanyName" onclick="goToCompanyProfile()"><h3><u>Company Name</u></h3></label>
+            <h3><label id="CompanyName" onclick="goToCompanyProfile()"><%= company.name %></label></h3>
             <figure>
                 <img src="media/avatar.png" alt="Profile picture" width="70" height="70">
             </figure>
@@ -59,8 +52,8 @@
 
             <label><h4>Description:</h4></label>
             <!--id to be used to get data from server-->
-            <textarea readonly id="userInterests" rows="4" cols="80">
-                Description goes here
+            <textarea readonly id="companyDescription" rows="4" cols="80">
+                <%= company.description %>
 
             </textarea>
             <label><h4>Workplace Rating:</h4></label>

@@ -113,7 +113,21 @@
 
 
         function login(){
-            goJobs();
+
+            var Uname = document.getElementById("uname").value;
+            var Pword = document.getElementById("pword").value;
+
+
+
+                if(Uname === "admin"){
+                    if(Pword === "admin"){
+
+                        goJobs();
+                    }
+                }
+
+
+
 
         }
         function clearContent(id){
@@ -136,7 +150,7 @@
             /* Submit and save data entered*/
 
         function goHome(){
-            console.log('Go home.');
+
             window.location = 'home';
         }
         function goJobs(){

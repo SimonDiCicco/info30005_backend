@@ -36,8 +36,8 @@
 
                 </tr>
                 <tr>
-                    <td><input type="text" name="firstName" class="nameBox"></td>
-                    <td><input type="text" name="lastName" class="nameBox"></td>
+                    <td><input id="firstName" type="text" name="firstName" class="nameBox"></td>
+                    <td><input id="lastName" type="text" name="lastName" class="nameBox"></td>
                 </tr>
                 <tr><td>Username:</td>
                     <td>Password:</td>
@@ -81,15 +81,23 @@
 
 <script type="text/javascript">
     function userSignUp(){
-        /*
+
         var uname = document.getElementById("newUsername").value;
         var pword = document.getElementById("newPassword").value;
+        var fname = document.getElementById("firstName").value;
+        var lname = document.getElementById("lastName").value;
+        var interests = document.getElementById("intetests").value;
+        var experiences = document.getElementById("experiences").value;
 
-        this.username.push(uname);
-        this.password.push(pword);
-        console.log(this.username);
-        console.log(this.password);
-    */
+        fakeUsers.push({
+            name: fname + lname,
+            username: uname,
+            password: pword,
+            interests: interests,
+            experiences: experiences
+        });
+       document.getElementById("UsernameLink").value = uname;
+
         goJobs();
 
     }
@@ -100,6 +108,7 @@
 
 
     function login(){
+
         goJobs();
 
     }
