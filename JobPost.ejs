@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Posting</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/frontier.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/profile.css" media="screen">
+</head>
+<body>
+
+
+
+<div class = "page">
+
+    <div class = "container">
+        <h1>The Frontier</h1>
+        <h2>Connecting disability to the world!</h2>
+
+    </div>
+
+    <div class = "buttonLinks">
+        <button name = "homeButton" type = "button" onclick="goHome();">Home</button>
+        <br>
+        <button name ="jobsButton" type = "button" onclick="goJobs();">Jobs</button>
+        <br>
+        <button name = "companiesButton" type = "button" onclick="goCompanies();">Companies</button>
+        <br>
+        <button name = "trainingButton" type = "button" onclick="goTraining();">Training</button>
+        <br>
+        <button name = "userButton" type = "button" onclick="goExperience();">User Experiences</button>
+
+
+
+    </div>
+
+    <div class="JobPost">
+
+        <label><h4>Job Title:</h4></label>
+        <input onfocus="clearContent(this.id)" id="jobTitle" size="40" placeholder="Enter a Job Title here">
+
+
+        <label><h4>Job Description:</h4></label>
+
+        <textarea onfocus="clearContent(this.id)" id="jobDesc" rows="4" cols="80" placeholder="Enter a description here!"></textarea>
+
+        <label><h4>Job response Email:</h4></label>
+        <input onfocus="clearContent(this.id)" id="jobEmail" size="60" placeholder="Please enter an email for job applications to be sent to!">
+        <br><br>
+        <button type="submit"  onclick="postJob();">Post Job!</button>
+
+    </div>
+
+    <div class="LoggedIn">
+        <label><h4>Logged in as: </h4></label><label id="UsernameLink" onclick="goToProfile(this.id);"><h4><u>Username</u></h4></label>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    function userSignUp(){
+        /*
+        var uname = document.getElementById("newUsername").value;
+        var pword = document.getElementById("newPassword").value;
+
+        this.username.push(uname);
+        this.password.push(pword);
+        console.log(this.username);
+        console.log(this.password);
+    */
+        goJobs();
+
+    }
+
+    function companySignUp(){
+        /*get data from html add to arraylist open newpage with usernamespecified*/
+    }
+
+
+    function login(){
+        goJobs();
+
+    }
+    function clearContent(id){
+        document.getElementById(id).value = '';
+    }
+    function addJob(){
+        window.location = 'jobPost';    // TODO change
+    }
+
+    function postJob(){
+
+        var job = {
+            title: document.getElementById('jobTitle').valueOf(),
+            description: document.getElementById('jobDesc').valueOf(),
+            email: document.getElementById('jobEmail').valueOf()
+        };
+        //jobs.push(job);
+        window.location = 'companyProfile';
+    }
+    /* Submit and save data entered*/
+
+    function goHome(){
+        console.log('Go home.');
+        window.location = 'home';
+    }
+    function goJobs(){
+        window.location = 'jobs';
+    }
+    function goCompanies(){
+        window.location = 'companies';
+    }
+    function goTraining(){
+        window.location = 'training';
+    }
+    function goExperience(){
+        window.location = 'experiences';
+    }
+    function goUserSignup() {
+        window.location = 'userSignup';
+    }
+    function goCompanySignup(){
+        window.location = 'companySignup';
+    }
+    function goToProfile(elementid){
+        //check username in db
+        //username = document.getElementById(elementid).valueOf();
+        //if user go to userPage
+        if((Math.floor(Math.random() *2)+1) === 1){
+            window.location='userProfile'
+        }else{
+            window.location ='companyProfile';
+        }
+
+        //if company go to companyPage
+        //window.location='companyProfile';
+    }
+    function goToCompanyProfile(){
+        window.location ='companyProfile';
+    }
+
+</script>
+
+</body>
+</html>
