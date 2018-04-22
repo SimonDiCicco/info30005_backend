@@ -2,81 +2,91 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company Signup</title>
-    <link rel="stylesheet" type="text/css" href="../stylesheets/frontier.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/signup.css" media="screen">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../stylesheets/companySignUp.css" media="screen">
     <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
 
 </head>
-
-<!-- Buttons layout code here -->
-<!-- Split segments into about 20 60 20 -->
-
 <body>
-<div class = "page">
 
-    <div class = "container">
-        <h1>The Frontier</h1>
-        <h2>Connecting disability to the world!</h2>
-
-    </div>
-
-    <div class = "buttonLinks">
-        <button name = "homeButton" type = "button" onclick="goHome();">Home</button>
-        <br>
-        <button name ="jobsButton" type = "button" onclick="goJobs();">Jobs</button>
-        <br>
-        <button name = "companiesButton" type = "button" onclick="goCompanies();">Companies</button>
-        <br>
-        <button name = "trainingButton" type = "button" onclick="goTraining();">Training</button>
-        <br>
-        <button name = "userButton" type = "button" onclick="goExperience();">User Experiences</button>
-
-
-
-    </div>
-
-    <div class= "jobdesc">
-        <form>
-            <div class = "paddingtext">
-                <h3>Company Name:</h3>
-            </div>
-            <textarea type="text" id="company"></textarea> <br>
-            <div class = "paddingtext">
-                <h3>Description:</h3>
-            </div>
-            <textarea type="text" id="descbox"></textarea> <br>
-        </form>
-        <h3>How supportive are you with disabilities?</h3>
-        <form>
-
-            <h4>Wheelchair access<input type="checkbox" id="checkboxes1"/>
-                Braile on signs<input type="checkbox" id="checkboxes2"/>
-                Tactile surfaces where crucial<input type ="checkbox" id="checkboxes3"/>
-            </h4>
-
-            <br>
-            <h4>Quiet spaces<input type="checkbox" id="checkboxes4"/>
-            Support and training<input type="checkbox" id="checkboxes5"/>
-            </h4>
-        </form>
-    </div>
-
-    <div class="uploadAndSubmit">
-        <div class="imageUpload">
-            <label for="file-input">
-                <img src="media/emptyProfile.png" class = "profilePictures">
-            </label>
-            <input id="file-input" type="file"/>
-            <h3>Click picture to upload!</h3>
-        </div>
-        <div class="buttonLinks">
-            <button onclick="goJobs();" name = "submit" type = "button">Sign Up</button>
+<div class="container-fluid">
+    <div class="jumbotron">
+        <div class="align">
+            <h1><b>The Frontier</b></h1>
+            <h2><b>Connecting disability to the world!</b></h2>
         </div>
     </div>
 
+    <div class="row">
+
+        <div class="col-md-3">
+            <div class = "buttonLinks">
+                <button name = "homeButton" type = "button" onclick="goHome();">Home</button>
+                <br>
+                <button name ="jobsButton" type = "button" onclick="goJobs();">Jobs</button>
+                <br>
+                <button name = "companiesButton" type = "button" onclick="goCompanies();">Companies</button>
+                <br>
+                <button name = "trainingButton" type = "button" onclick="goTraining();">Training</button>
+                <br>
+                <button name = "userButton" type = "button" onclick="goExperience();">User Experiences</button>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+
+            <form>
+                <div class="paddingtext">
+                    <h3>Company Name:</h3>
+                </div>
+                <textarea type="text" id="company"></textarea> <br>
+                <div class="paddingtext">
+                    <h3>Description:</h3>
+                </div>
+                <textarea type="text" id="descbox"></textarea> <br>
+            </form>
+            <h3>How supportive are you with disabilities?</h3>
+            <form>
+
+                <h4>Wheelchair access<input type="checkbox" id="checkboxes1"/>
+                    Braile on signs<input type="checkbox" id="checkboxes2"/>
+                    Tactile surfaces where crucial<input type="checkbox" id="checkboxes3"/>
+                </h4>
+
+                <br>
+                <h4>Quiet spaces<input type="checkbox" id="checkboxes4"/>
+                    Support and training<input type="checkbox" id="checkboxes5"/>
+                </h4>
+
+                <div class="buttonLinks">
+                    <button onclick="goJobs();" name="submit" type="button">Sign Up</button>
+                </div>
+
+
+            </form>
+        </div>
+
+        <div class="col-md-3">
+
+
+            <div class="buttonLinks">
+                <br><br>
+                <br><br>
+                <br><br>
+
+                <!-- Upload image -> needs to be fixed with button -->
+                <input type='file' onchange="readURL(this);"/>
+                <img id="blah" src="#" alt="your image"/>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 <script type="text/javascript">
@@ -149,7 +159,7 @@
         //username = document.getElementById(elementid).valueOf();
         //if user go to userPage
         if((Math.floor(Math.random() *2)+1) === 1){
-            window.location='userProfile'
+            window.location='userProfile_test.html'
         }else{
             window.location ='companyProfile';
         }
@@ -165,3 +175,4 @@
 
 </body>
 </html>
+

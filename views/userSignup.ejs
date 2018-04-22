@@ -2,88 +2,99 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Signup</title>
-    <link rel="stylesheet" type="text/css" href="../stylesheets/frontier.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/signup.css" media="screen">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../stylesheets/userSignup.css" media="screen">
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
 </head>
 
 <body>
-<div class = "page">
-
-    <div class = "container">
-        <h1>The Frontier</h1>
-        <h2>Connecting disability to the world!</h2>
-
-    </div>
-
-    <div class = "buttonLinks">
-        <button name = "homeButton" type = "button" onclick="goHome();">Home</button>
-        <br>
-        <button name ="jobsButton" type = "button" onclick="goJobs();">Jobs</button>
-        <br>
-        <button name = "companiesButton" type = "button" onclick="goCompanies();">Companies</button>
-        <br>
-        <button name = "trainingButton" type = "button" onclick="goTraining();">Training</button>
-        <br>
-        <button name = "userButton" type = "button" onclick="goExperience();">User Experiences</button>
-    </div>
-
-    <div class= "userInfo">
-        <form>
-            <table>
-                <tr>
-                    <td><h3>First Name:</h3></td>
-                    <td><h3>Last Name:</h3></td>
-
-                </tr>
-                <tr>
-                    <td><input id="firstName" type="text" name="firstName" class="nameBox"></td>
-                    <td><input id="lastName" type="text" name="lastName" class="nameBox"></td>
-                </tr>
-                <tr><td><h3>Username:</h3></td>
-                    <td><h3>Password:</h3></td>
-                </tr>
-                <tr>
-
-                    <td><input id="newUsername" type="text" name="username" class="nameBox"></td>
-                    <td><input id="newPassword" type="text" name="password" class="nameBox"></td>
-                </tr>
-            </table>
-            <div class = "paddingtext">
-                <h3> Email</h3>
-                <input type="text" name="email" class="emailBox">
-            </div>
-            <div class = "paddingtext">
-                <h3>Interests:</h3>
-            </div>
-            <textarea type="text" id="interests" class="descBox"></textarea>
-            <div class = "paddingtext">
-                <h3>Experiences:</h3>
-            </div>
-            <textarea type="text" id="experience" class="descBox"></textarea>
-            <div class = "paddingtext">
-                <h3>Describe your disability:</h3>
-            </div>
-            <textarea type="text" id="disability" rows="4" cols="60"></textarea>
-        </form>
-    </div>
-
-    <div class="uploadAndSubmit">
-        <div class="imageUpload">
-            <label for="file-input">
-                <img src="media/emptyProfile.png" class = "profilePictures">
-            </label>
-            <input id="file-input" type="file"/>
-            <h3>Click picture to upload!</h3>
-        </div>
-        <div class="buttonLinks">
-            <button onclick = "userSignUp();"name = "submit" type = "button">Sign Up</button>
+<div class="container-fluid">
+    <div class="jumbotron">
+        <div class="align">
+            <h1><b>The Frontier</b></h1>
+            <h2><b>Connecting disability to the world!</b></h2>
         </div>
     </div>
 
+    <div class="row">
+
+        <div class="col-md-3">
+            <div class = "buttonLinks">
+                <button name = "homeButton" type = "button" onclick="goHome();">Home</button>
+                <br>
+                <button name ="jobsButton" type = "button" onclick="goJobs();">Jobs</button>
+                <br>
+                <button name = "companiesButton" type = "button" onclick="goCompanies();">Companies</button>
+                <br>
+                <button name = "trainingButton" type = "button" onclick="goTraining();">Training</button>
+                <br>
+                <button name = "userButton" type = "button" onclick="goExperience();">User Experiences</button>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+
+            <div class= "userInfo">
+                <form>
+                    <table>
+                        <tr>
+                            <td>First Name:</td>
+                            <td>Last Name:</td>
+
+                        </tr>
+                        <tr>
+                            <td><input id="firstName" type="text" name="firstName" class="nameBox"></td>
+                            <td><input id="lastName" type="text" name="lastName" class="nameBox"></td>
+                        </tr>
+                        <tr><td>Username:</td>
+                            <td>Password:</td>
+                        </tr>
+                        <tr>
+
+                            <td><input id="newUsername" type="text" name="username" class="nameBox"></td>
+                            <td><input id="newPassword" type="text" name="password" class="nameBox"></td>
+                        </tr>
+                    </table>
+                    <div class = "paddingtext">
+                        <h3> Email</h3>
+                        <input type="text" name="email" class="emailBox">
+                    </div>
+                    <div class = "paddingtext">
+                        <h3>Interests:</h3>
+                    </div>
+                    <textarea type="text" id="interests" class="descBox"></textarea>
+                    <div class = "paddingtext">
+                        <h3>Experiences:</h3>
+                    </div>
+                    <textarea type="text" id="experience" class="descBox"></textarea>
+                    <div class = "paddingtext">
+                        <h3>Describe your disability:</h3>
+                    </div>
+                    <textarea type="text" id="disability" rows="4" cols="60"></textarea>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="uploadAndSubmit">
+                <div class="buttonLinks">
+                    <img src="media/emptyProfile.png" class = "profilePictures">
+                    <button name = "image" type = "button">Upload Image</button>
+                </div>
+                <div class="buttonLinks">
+                    <button onclick = "userSignUp();"name = "submit" type = "button">Sign Up</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
-
 <script type="text/javascript">
     function userSignUp(){
 
@@ -163,7 +174,7 @@
         //username = document.getElementById(elementid).valueOf();
         //if user go to userPage
         if((Math.floor(Math.random() *2)+1) === 1){
-            window.location='userProfile'
+            window.location='userProfile_test.html'
         }else{
             window.location ='companyProfile';
         }
