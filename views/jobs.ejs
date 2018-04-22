@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jobs</title>
 
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../stylesheets/jobs.css" media="screen">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 
 
 </head>
@@ -15,67 +19,63 @@
 <!-- Split segments into about 20 60 20 -->
 
 <body>
-<div class = "page">
-
-    <div class = "container">
-        <h1>The Frontier</h1>
-        <h2>Connecting disability to the world!</h2>
-
-
+<div class="container-fluid">
+    <div class="jumbotron">
+        <div class="align">
+            <h1><b>The Frontier</b></h1>
+            <h2><b>Connecting disability to the world!</b></h2>
+        </div>
     </div>
-
-
-    <div class = "JobAdd">
-        <br><br>
-        <br><br>
-        <br><br>
-        <button type="button" onclick="goJobAdd();">Add Job</button>
-    </div>
-
-
-
-
-    <div class = "buttonLinks">
-        <button id="jobsToHome" name = "homeButton" type = "button" onclick="goHome();">Home</button>
-        <br>
-        <button name ="jobsButton" type = "button" onclick="goJobs();">Jobs</button>
-        <br>
-        <button name = "companiesButton" type = "button" onclick="goCompanies();">Companies</button>
-        <br>
-        <button name = "trainingButton" type = "button" onclick="goTraining();">Training</button>
-        <br>
-        <button name = "userButton" type = "button" onclick="goExperience();">User Experiences</button>
-    </div>
-
-    <div class="wrapper">
-        <div class="tile" id="jobTile1" onclick="applyJob(this.id);">
-            <h3>HR Assistant, Ernst and Young</h3><h4>Scanning and printing of documents and council approved plans.</h4>
-        </div>
-        <div class="tile" id="jobTile2" onclick="applyJob(this.id);">
-            <h3>Librarian, Hampshire Council</h3><h4>Sorting of books, magazines and DVDs. Handling customer questions about location of books within the library.</h4>
-        </div>
-        <div class="tile" id="jobTile3" onclick="applyJob(this.id);">
-            <h3>Sales attendant, Big W</h3><h4>Facing of shelves, replenishment of stock and customer service.</h4>
-        </div>
-        <div class="tile" id="jobTile4" onclick="applyJob(this.id);">
-            <h3>Data Entry, Tennis Australia</h3><h4>Entry of generic sports data, based on input and real life game-play.</h4>
-        </div>
-        <div class="tile" id="jobTile5" onclick="applyJob(this.id);">
-            <h3>Pick Packer, CardBoard Enthusiasts</h3><h4>Pick items based on a checklist order, pick at your own rate, accuracy is important.</h4>
-        </div>
-        <div class="tile" id="jobTile6" onclick="applyJob(this.id);">
-            <h3>Full Time truck loader</h3><h4>Assist in preparing pallets for transportation. This involves wrapping them and ensuring the contents are stable.</h4>
+    <div class="row">
+        <div class="col-md-2">
+            <div class = "buttonLinks">
+                <button name = "homeButton" type = "button" onclick="goHome();">Home</button>
+                <br>
+                <button name ="jobsButton" type = "button" onclick="goJobs();">Jobs</button>
+                <br>
+                <button name = "companiesButton" type = "button" onclick="goCompanies();">Companies</button>
+                <br>
+                <button name = "trainingButton" type = "button" onclick="goTraining();">Training</button>
+                <br>
+                <button name = "userButton" type = "button" onclick="goExperience();">User Experiences</button>
+            </div>
         </div>
 
 
-    </div>
+        <div class="col-md-6">
+            <div class="wrapper">
+                <div class="tile" id="jobTile1" onclick="applyJob(this.id);">
+                    <h3>HR Assistant, Ernst and Young</h3><h4>Scanning and printing of documents and council approved plans.</h4>
+                </div>
+                <div class="tile" id="jobTile2" onclick="applyJob(this.id);">
+                    <h3>Librarian, Hampshire Council</h3><h4>Sorting of books, magazines and DVDs. Handling customer questions about location of books within the library.</h4>
+                </div>
+                <div class="tile" id="jobTile3" onclick="applyJob(this.id);">
+                    <h3>Sales attendant, Big W</h3><h4>Facing of shelves, replenishment of stock and customer service.</h4>
+                </div>
+                <div class="tile" id="jobTile4" onclick="applyJob(this.id);">
+                    <h3>Data Entry, Tennis Australia</h3><h4>Entry of generic sports data, based on input and real life game-play.</h4>
+                </div>
+                <div class="tile" id="jobTile5" onclick="applyJob(this.id);">
+                    <h3>Pick Packer, CardBoard Enthusiasts</h3><h4>Pick items based on a checklist order, pick at your own rate, accuracy is important.</h4>
+                </div>
+                <div class="tile" id="jobTile6" onclick="applyJob(this.id);">
+                    <h3>Full Time truck loader</h3><h4>Assist in preparing pallets for transportation. This involves wrapping them and ensuring the contents are stable.</h4>
+                </div>
+            </div>
+        </div>
 
+        <div class="col-md-2">
+            <!-- <div class="LoggedIn"> -->
+            <label><h3>Logged in as: </h3></label><label id="UsernameLink" onclick="goToProfile(this.id);"><h3><u>Username</u></h3></label>
 
+            <br><br>
 
-
-
-    <div class="LoggedIn">
-        <h4><label>Logged in as:</label></h4><h4><label id="UsernameLink" onclick="goToProfile(this.id);">CardBoard Enthusiasts</label></h4>
+            <!-- Upload image -> needs to be fixed with button -->
+            <input type='file' onchange="readURL(this);" />
+            <img id="blah" src="#" alt="your image" />
+            <!-- </div>  -->
+        </div>
     </div>
 </div>
 
@@ -162,7 +162,7 @@
         //username = document.getElementById(elementid).valueOf();
         //if user go to userPage
         if((Math.floor(Math.random() *2)+1) === 1){
-            window.location='userProfile'
+            window.location='userProfile_test.html'
         }else{
             window.location ='companyProfile';
         }
