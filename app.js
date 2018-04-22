@@ -133,9 +133,9 @@ app.get('/companyProfile', function(req,res){
     });
 });
 
-app.get('/userProfile', function(req, res) {
+app.get('/userProfile_test.html', function(req, res) {
 
-    res.render('userProfile.ejs',{
+    res.render('userProfile_test.html.ejs',{
        user: fakeUsers[0],
     });
 
