@@ -6,12 +6,12 @@
     width: 250px;
     height: 250px;
     padding: 10px;
+    position: relative;
 
 }
 
 .tile:hover{
     background-color: #e5e5e5 ;
-
 }
 
 .tile:active{
@@ -22,4 +22,17 @@
     display: grid;
     grid-row: 2/4;
     grid-column: 2/4;
+}
+
+.tileBackground {
+    font-family: 'Abril Fatface', cursive;
+    font-weight: 400;
+    font-size: 150px;
+    color: cornflowerblue;
+    opacity: 0.15;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    overflow: hidden;
 }
