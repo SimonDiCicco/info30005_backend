@@ -75,7 +75,9 @@ button:active{
     text-align: left;
 }
 
-
+.align {
+    text-align: center;
+}
 
 .imageHolder{
     width : 2500px;
@@ -190,4 +192,5 @@ h3 {
     font-size: 1em;
 
 }
+
 
