@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Lato:300,400,700');
+
+html {
+    height:50%;
+}
+
+body {
+    background-color: lightblue;
+    background-size: cover;
+}
+
+h1 {
+    background-color: antiquewhite;
+    border: 5px solid #B7AFA3;
+    font-family: 'Abril Fatface', cursive;
+    font-weight: 400;
+    font-size: 4em;
+}
+
+h2 {
+    font-family: 'Lato', 'Sans-serif';
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.75em;
+    line-height: 1px;
+}
+
+
+h3 {
+    font-family: 'Lato', 'Sans-serif', serif;
+    font-weight: 600;
+    font-size: 1.25em;
+}
+
+h4 {
+    font-family: 'Lato', 'Sans-serif', serif;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+td {
+    font-family: 'Lato', 'Sans-serif', serif;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+textarea {
+    font-family: 'Lato', 'Sans-serif', serif;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+button {
+
+    display: block;
+    background-color: antiquewhite;
+    cursor: pointer;
+    border: 3px solid #B7AFA3;
+    font-size: 1.5em;
+    border-radius: 8px;
+    width: 200px;
+    height: 75px;
+}
+
+button:hover{
+    background-color: #B7AFA3 ;
+    color: white;
+}
+
+button:active{
+    transform: translateY(4px) ;
+}
+
+
+textarea{
+    background-color: #fcf3e7;
+    text-align: left;
+}
+input{
+    background-color: #fcf3e7;
+    width: fit-content;
+}
+.container{
+
+    float: left;/*maybe not this*/
+    grid-column: 1/4;
+    grid-row: 1/2;
+    text-align: center;
+    color: black;
+
+}
+
+.buttonLinks{
+    grid-column: 1/2;
+    grid-row: 2/4;
+    padding: 10px;
+}
+
+.profilePictures {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 20px;
+
+    object-fit: cover;
+    object-position: center;
+}

@@ -1,0 +1,10 @@
+.uploadAndSubmit {
+    grid-column: 3/4;
+    grid-row: 2/4;
+    position: center;
+    right: 250px;
+}
+
+.imageUpload > input {
+    display: none;
+}

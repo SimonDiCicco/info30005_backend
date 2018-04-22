@@ -2,7 +2,9 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>c</title>
+    <title>Company Signup</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/frontier.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/signup.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../stylesheets/companySignUp.css" media="screen">
     <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
@@ -59,23 +61,19 @@
             <h4>Quiet spaces<input type="checkbox" id="checkboxes4"/>
             Support and training<input type="checkbox" id="checkboxes5"/>
             </h4>
-
-
         </form>
-        <div class="buttonLinks">
-            <button onclick="goJobs();" name = "submit" type = "button">Sign Up</button>
-        </div>
     </div>
 
     <div class="uploadAndSubmit">
+        <div class="imageUpload">
+            <label for="file-input">
+                <img src="media/emptyProfile.png" class = "profilePictures">
+            </label>
+            <input id="file-input" type="file"/>
+            <h3>Click picture to upload!</h3>
+        </div>
         <div class="buttonLinks">
-            <br><br>
-            <br><br>
-            <br><br>
-            
-            <!-- Upload image -> needs to be fixed with button -->
-            <input type='file' onchange="readURL(this);" />
-            <img id="blah" src="#" alt="your image" />
+            <button onclick="goJobs();" name = "submit" type = "button">Sign Up</button>
         </div>
     </div>
 

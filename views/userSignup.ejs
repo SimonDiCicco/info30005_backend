@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>User Signup</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/frontier.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/signup.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../stylesheets/userSignup.css" media="screen">
 </head>
 
@@ -31,16 +33,16 @@
         <form>
             <table>
                 <tr>
-                    <td>First Name:</td>
-                    <td>Last Name:</td>
+                    <td><h3>First Name:</h3></td>
+                    <td><h3>Last Name:</h3></td>
 
                 </tr>
                 <tr>
                     <td><input id="firstName" type="text" name="firstName" class="nameBox"></td>
                     <td><input id="lastName" type="text" name="lastName" class="nameBox"></td>
                 </tr>
-                <tr><td>Username:</td>
-                    <td>Password:</td>
+                <tr><td><h3>Username:</h3></td>
+                    <td><h3>Password:</h3></td>
                 </tr>
                 <tr>
 
@@ -68,9 +70,12 @@
     </div>
 
     <div class="uploadAndSubmit">
-        <div class="buttonLinks">
-            <img src="media/emptyProfile.png" class = "profilePictures">
-            <button name = "image" type = "button">Upload Image</button>
+        <div class="imageUpload">
+            <label for="file-input">
+                <img src="media/emptyProfile.png" class = "profilePictures">
+            </label>
+            <input id="file-input" type="file"/>
+            <h3>Click picture to upload!</h3>
         </div>
         <div class="buttonLinks">
             <button onclick = "userSignUp();"name = "submit" type = "button">Sign Up</button>

@@ -1,0 +1,25 @@
+.tile{
+    background-color: #fdf9f3;
+    cursor: pointer;
+    border: #B7AFA3 2px solid;
+    border-radius: 12px;
+    width: 250px;
+    height: 250px;
+    padding: 10px;
+
+}
+
+.tile:hover{
+    background-color: #e5e5e5 ;
+
+}
+
+.tile:active{
+    transform: translateY(4px) ;
+}
+
+.tiles-grid{
+    display: grid;
+    grid-row: 2/4;
+    grid-column: 2/4;
+}
