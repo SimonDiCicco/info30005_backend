@@ -186,5 +186,38 @@ function readURL(input) {
 //app.get('/test', controller.test());
 
 
-//Listen for heroku server port
+//Mongo DB database
+var mongoose = require('mongoose');
+frontierdb = mongoose.connect('mongodb://frontierdb:frontier@ds163119.mlab.com:63119/frontierdb');
+
+var db = mongoose.connection;
+var Schema = mongoose.Schema;
+db.on('error', console.error.bind(console,'connection error:'));
+db.once('open', function(){
+    // we have connected successfully
+})
+
+
+mongoose.model('JobSeeker',new Schema({Firstname:String},{collection:'JobSeeker'}));
+mongoose.model('Jobsdb',new Schema({Title:String},{collection:'Jobs'}));
+mongoose.model('Companydb',new Schema({Title:String},{collection:'Companies'}));
+app.get('/jobseeker',function(req,res){
+    mongoose.model('JobSeeker').find(function(err,JobSeeker){
+
+        res.send(JobSeeker);
+    });
+});
+app.get('/jobsdb/:jobID',function(req,res){
+    mongoose.model('Jobsdb').find({applicants:{userid:req.params.jobID}},
+        function(err,Jobsdb){
+            res.send(Jobsdb);
+        });
+});
+app.get('/companydb',function(req,res){
+    mongoose.model('Companydb').find(function(err,Companydb){
+
+        res.send(Companydb);
+    });
+});
+
 
