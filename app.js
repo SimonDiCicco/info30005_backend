@@ -5,7 +5,7 @@ const app = express();
 //const controller = require('./Controllers/controller');
 
 
-//const router = require('./routes/routes');
+const router = require('./routes/routes');
 //Set View engine
 app.set('view engine','ejs');
 app.use(express.static('public'));
@@ -13,11 +13,9 @@ app.use(express.static('public'));
 const PORT = process.env.PORT || 3000;
 /*******************************************************************/
 //Coming soon page render
-app.get('/', function(req,res){
-    res.render('ComingSoon.ejs');
-});
 
 
+app.use(router);
 /*
 Data model
 ----------
@@ -136,7 +134,7 @@ app.get('/companyProfile', function(req,res){
 app.get('/userProfile', function(req, res) {
 
     res.render('userProfile.ejs',{
-       user: fakeUsers[0],
+       user: fakeUsers[0]
     });
 
 
@@ -186,38 +184,13 @@ function readURL(input) {
 //app.get('/test', controller.test());
 
 
-//Mongo DB database
+//Mongo DB database connecttion
 var mongoose = require('mongoose');
 frontierdb = mongoose.connect('mongodb://frontierdb:frontier@ds163119.mlab.com:63119/frontierdb');
 
 var db = mongoose.connection;
-var Schema = mongoose.Schema;
+
 db.on('error', console.error.bind(console,'connection error:'));
 db.once('open', function(){
     // we have connected successfully
-})
-
-
-mongoose.model('JobSeeker',new Schema({Firstname:String},{collection:'JobSeeker'}));
-mongoose.model('Jobsdb',new Schema({Title:String},{collection:'Jobs'}));
-mongoose.model('Companydb',new Schema({Title:String},{collection:'Companies'}));
-app.get('/jobseeker',function(req,res){
-    mongoose.model('JobSeeker').find(function(err,JobSeeker){
-
-        res.send(JobSeeker);
-    });
 });
-app.get('/jobsdb/:jobID',function(req,res){
-    mongoose.model('Jobsdb').find({applicants:{userid:req.params.jobID}},
-        function(err,Jobsdb){
-            res.send(Jobsdb);
-        });
-});
-app.get('/companydb',function(req,res){
-    mongoose.model('Companydb').find(function(err,Companydb){
-
-        res.send(Companydb);
-    });
-});
-
-
