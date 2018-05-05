@@ -8,15 +8,19 @@ const controller = require('../Controllers/controller');
 router.get('/',controller.renderComingSoon);
 
 router.get('/test',controller.test);
-router.get('/companydb',controller.getAllCompanies);
-router.get('/jobsdb',controller.getAllJobs);
 
 
 
-/*API Server*/
-/*
-router.post('/api',controller.createJob);
-router.get('api/job',controller.findAllJobs);
-router.get('api/')
-*/
+/*REST API*/
+router.get('/api/companydb',controller.getAllCompanies);
+router.get('/api/jobsdb',controller.getAllJobs);
+router.get('/api/appliedJobs',controller.getAppliedJobs);
+
+router.post('/api/addJobSeeker',controller.addJobSeeker);
+router.post('/api/addJob',controller.addJob);
+router.post('api/addCompany',controller.addCompany);
+
+
+
+
 module.exports = router;

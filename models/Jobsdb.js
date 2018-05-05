@@ -7,7 +7,7 @@ var jobsSchema = new Schema(
         "title":String,
         "company":String,
         "description":String,
-        "Applicants":Object
+        "applicants":Array
     },
     {collection:'Jobs'}
 

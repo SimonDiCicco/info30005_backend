@@ -5,7 +5,7 @@ var companySchema = new Schema(
     {
         "CompanyName":String,
         "Description":String,
-        "Jobs":Object
+        "Jobs":Array
     },{collection:'Companies'}
 
 
