@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@types/express": "^4.11.1",
+    "json-parser": "^1.1.5",
     "mongodb": "^3.0.7",
     "mongoose": "^5.0.16"
   }

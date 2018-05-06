@@ -18,57 +18,6 @@ app.use(router);
 
 
 
-app.get('/home', function(req,res){
-    res.render('Home.ejs');
-});
-
-app.get('/companies', function(req,res){
-    res.render('companies.ejs');
-});
-
-app.get('/training', function(req,res){
-    res.render('training.ejs');
-});
-
-app.get('/experiences', function(req,res){
-    res.render('experiences.ejs');
-});
-
-app.get('/userSignup', function(req,res){
-    res.render('userSignup.ejs');
-});
-
-app.get('/companySignup', function(req,res){
-    res.render('companySignUp.ejs');
-});
-
-app.get('/jobs', function(req,res){
-    res.render('jobs.ejs',{
-        jobs:fakeJobs
-    });
-});
-app.get('/jobPost', function(req,res){
-    res.render('JobPost.ejs');
-});
-app.get('/companyProfile', function(req,res){
-    var num = Math.floor(Math.random()*5);
-    res.render('companyProfile.ejs',{
-        company: fakeCompanies[num],
-        job:fakeJobs[num]
-
-    });
-});
-
-app.get('/userProfile', function(req, res) {
-
-    res.render('userProfile.ejs',{
-       user: fakeUsers[0]
-    });
-
-
-
-
-});
 
 
 app.listen(PORT,function(){

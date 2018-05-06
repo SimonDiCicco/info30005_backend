@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 var jobseekerSchema = new Schema(
 
     {
+
         "Firstname":String,
         "Lastname":String,
         "Username":String,
