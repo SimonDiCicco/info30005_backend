@@ -9,6 +9,8 @@ app.set('view engine','ejs');
 app.use(express.static('public'));
 //Heroku server port
 const PORT = process.env.PORT || 3000;
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
 /*******************************************************************/
 
 
@@ -46,13 +48,4 @@ function readURL(input) {
 
 
 
-//Mongo DB database connecttion
-var mongoose = require('mongoose');
-frontierdb = mongoose.connect('mongodb://frontierdb:frontier@ds163119.mlab.com:63119/frontierdb');
-
-var db = mongoose.connection;
-
-db.on('error', console.error.bind(console,'connection error:'));
-db.once('open', function(){
-    // we have connected successfully
-});
+require('./models/db');

@@ -64,8 +64,8 @@ module.exports.getAllCompanies = function(req, res){
     });
 };
 module.exports.getAppliedJobs = function(req,res){
-
-    Job.find({applicants:{$all:"5ae7c29e992b51311002e864"}},
+    // User ID: "5ae7c29e992b51311002e864"
+    Job.find({applicants:{$all:req.body._id}},
         function(err,Job){
         if(err){
             console.log("Couldn't find anything");
@@ -76,7 +76,7 @@ module.exports.getAppliedJobs = function(req,res){
 
 };
 module.exports.getPostedJobs = function(req,res){
-    Company.find({CompanyName: "Big W"},{Jobs:1,_id:0},
+    Company.find({CompanyName: req.body.CompanyName},{Jobs:1,_id:0},
         function(err,companyJobs) {
             if(err){
                 console.log("Couldn't find anything");
@@ -99,15 +99,12 @@ module.exports.getPostedJobs = function(req,res){
 
             }
             res.send("done");
-
-
-
-        });
+            });
 
 };
 module.exports.getnumberApplicants = function(req,res){
     /*for each job listed when link is clicked, alert will show applicants with name*/
-    Job.find({title: "Pick Paker", company: "Cardboard Enthusiasts"},{ applicants:1,_id:0},
+    Job.find({title: req.body.title, company: req.body.company},{ applicants:1,_id:0},
         function(err,jobApplicants){
 
             var apps = JSON.stringify(jobApplicants);
@@ -129,13 +126,13 @@ module.exports.getnumberApplicants = function(req,res){
 
 module.exports.JobApply = function(req,res){
 
-    JobSeeker.find({Firstname:"Frank"},{_id:1},
+    JobSeeker.find({Firstname:req.body.Firstname},{_id:1},
         function(err,user){
             user = JSON.parse(JSON.stringify(user));
             console.log(user);
             console.log(user[0]._id);
             Job.findOneAndUpdate(
-                {company:"CardBoard Enthusiasts"},
+                {company:req.body.CompanyName},
                 {$push: {"applicants":user[0]._id}},
                 function (err,raw) {
                     if(err){
@@ -150,12 +147,12 @@ module.exports.addJobSeeker = function(req, res) {
     var seeker = new JobSeeker(
         {
 
-            "Firstname": "Frank",
-            "Lastname": "F",
-            "Username": "frank1",
-            "Password": "password",
-            "Experiences": "swimmer for 6 months",
-            "Interests": "Enjoy playing soccer and tennis."
+            "Firstname": req.body.Firstname,
+            "Lastname": req.body.Lastname,
+            "Username": req.body.Username,
+            "Password": req.body.Password,
+            "Experiences": req.body.Experiences,
+            "Interests": req.body.Interests
         }
     );
 
@@ -173,12 +170,18 @@ module.exports.addJob = function(req, res) {
     var job = new Job(
         {
 
+
+            "title":req.body.title,
+            "company":req.body.company,
+            "description":req.body.description,
+            "applicants" : []
             /*Input elements to be inserted*/
+            /*
             "title":"Sales Attendant",
             "company":"Big W",
             "description":"Process payments, deal with customers, have knowledge of products.",
             "applicants" : [""]
-
+            */
         }
     );
 
@@ -187,7 +190,7 @@ module.exports.addJob = function(req, res) {
         if(!err){
             res.send(newJob._id);
             Company.findOneAndUpdate(
-                {CompanyName:"Big W"},
+                {CompanyName:req.body.company},
                 {$push: {"Jobs":newJob._id}},
                 function (err,raw) {
                     if(err){
@@ -207,9 +210,9 @@ module.exports.addJob = function(req, res) {
 module.exports.addCompany = function(req, res) {
     var company = new Company(
         {
-            "CompanyName":"Costco",
-            "Description":"Bulk buying at its best",
-            "Jobs":[""]
+            "CompanyName":req.body.CompanyName,
+            "Description":req.body.Description,
+            "Jobs":[]
 
         }
     );
@@ -224,4 +227,7 @@ module.exports.addCompany = function(req, res) {
 
 };
 
-
+/*
+req.body.name
+etc
+ */
