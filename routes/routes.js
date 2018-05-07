@@ -32,9 +32,9 @@ router.get('/api/numberApplicants',controller.getnumberApplicants);
 
 /*POST*/
 
-//router.get('/api/apply',controller.JobApply);               **Still to be completed
+router.post('/api/apply',controller.JobApply);               //Still to be completed
 router.post('/api/addJobSeeker',controller.addJobSeeker);
-router.get('/api/addJob',controller.addJob);
+router.post('/api/addJob',controller.addJob);
 router.post('api/addCompany',controller.addCompany);
 
 

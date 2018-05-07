@@ -126,13 +126,14 @@ module.exports.getnumberApplicants = function(req,res){
 
         });
 };
-/* Still to be completed
+
 module.exports.JobApply = function(req,res){
 
-    JobSeeker.find({Fistname:"John"},{_id:1},
+    JobSeeker.find({Firstname:"Frank"},{_id:1},
         function(err,user){
             user = JSON.parse(JSON.stringify(user));
             console.log(user);
+            console.log(user[0]._id);
             Job.findOneAndUpdate(
                 {company:"CardBoard Enthusiasts"},
                 {$push: {"applicants":user[0]._id}},
@@ -143,7 +144,8 @@ module.exports.JobApply = function(req,res){
                     res.send("done")
                 });
     });
-};*/
+};
+
 module.exports.addJobSeeker = function(req, res) {
     var seeker = new JobSeeker(
         {
