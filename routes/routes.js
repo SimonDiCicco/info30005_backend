@@ -39,5 +39,5 @@ router.post('/api/apply/:username',controller.JobApply);               //Still t
 router.post('/api/addJobSeeker',controller.addJobSeeker);
 router.post('/api/addJob',controller.addJob);
 router.post('/api/addCompany',controller.addCompany);
-
+router.post('/api/login',controller.login);
 module.exports = router;

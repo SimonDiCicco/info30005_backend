@@ -70,7 +70,7 @@
               class="close" title="Close ModalForm">Exit</span>
 
         <!-- Content within the ModalForm -->
-        <form class = "OpenModalForm">
+        <form class = "OpenModalForm" action="/api/login" method="post">
             <div class="popup">
                 <br><br>
                 <label ><b>Username: </b></label>
@@ -78,9 +78,13 @@
                 <br><br>
                 <label ><b>Password:   </b></label>
                 <input id="pword" type="text" placeholder="Enter your Password" name = "password" required>
-                <br><br><br><br>
+                <br><br>
+                <label>Please Select one:</label><br>
+                <label>Company:</label><input type="checkbox" id="CompanyCheck" name="CompanyCheck">
+                <label>Job Seeker:</label><input type="checkbox" id="SeekerCheck" name="SeekerCheck">
+                <br>
                 <!-- to input linkage html page for login -->
-                <button type="button" onclick="login();">Login</button>
+                <button type="submit" >Login</button>
 
 
             </div>

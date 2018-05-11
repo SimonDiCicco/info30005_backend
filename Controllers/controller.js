@@ -348,6 +348,8 @@ module.exports.addCompany = function(req, res) {
         {
             "CompanyName":req.body.CompanyName,
             "Description":req.body.Description,
+            "Username":req.body.username,
+            "Password":req.body.password,
             "Jobs":[],
             "Rating":check
 
@@ -362,5 +364,35 @@ module.exports.addCompany = function(req, res) {
     });
 
 
+};
+
+module.exports.login = function(req, res){
+
+//username
+    //password
+    //CompanyCheck
+    //SeekerCheck
+    if(req.body.CompanyCheck){
+        Company.find({Username:req.body.username, Password:req.body.password},
+            function(err,company){
+                if(company.length === 1){
+                    res.redirect('/jobs/'+req.body.username);
+                }else{
+                    res.redirect('/home');
+                }
+            });
+
+
+    }else if(req.body.SeekerCheck){
+        JobSeeker.find({Username:req.body.username, Password:req.body.password},
+            function(err, user){
+            if(user.length === 1){
+                res.redirect('/jobs/'+req.body.username);
+            }else{
+                res.redirect('/home');
+            }
+            });
+
+    }
 };
 

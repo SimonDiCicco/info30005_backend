@@ -6,6 +6,8 @@ var companySchema = new Schema(
     {
         "CompanyName":String,
         "Description":String,
+        "Username":String,
+        "Password":String,
         "Jobs":Array,
         "Rating":Int32
     },{collection:'Companies'}
