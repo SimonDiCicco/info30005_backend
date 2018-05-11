@@ -74,8 +74,8 @@
     z-index: 1; /* Sit on top */
     left: 40%;
     top: 40%;
-    width: 300px; /* Full width */
-    height: 300px;  /* Full height */
+    width: 20%; /* Full width */
+    height: 50%;  /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: #fcf3e7;
     border-radius: 12px;
@@ -99,9 +99,28 @@
 
 .close {
     content: 'X';
-    color: darkred;
+    color: black;
     float: right;
-    font-size: 28px;
+    font-size: 60px;
     font-weight: bold;
     cursor: pointer;
+
+}
+.close:hover{
+    background-color: crimson;
+}
+
+.label{
+    left: 20%;
+    -webkit-align-items: center;
+    align-items: center;
+    text-align: right;
+    padding-left: 50px;
+    margin: 10px ;
+}
+.input{
+    position: center;
+    text-align: center;
+    padding-left: 20px;
+    font-size: 50px;
 }

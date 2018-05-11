@@ -37,20 +37,25 @@
 
 
     <div class="wrapper">
-        <div class="tile" id="userJobTile1" onclick="applyJob(this.id);">
-            <h3>HR Assistant, Ernst and Young</h3><h4>Scanning and printing of documents and council approved plans.</h4>
+
+        <% for(var i=0;i<jobs.length;i++){
+
+        if(jobs[i].title && jobs[i].description){%>
+        <div class="tile" id="userjobTile<%=i+1%>" >
+            <b><h3><%=jobs[i].title+", "+jobs[i].company%></h3></b><h4><%=jobs[i].description%><br> <h3>Workplace Rating:</h3></h4>
+            <div class = "tileBackground"> <%=jobs[i].title.replace(/[a-z]/g, '').replace(/\s+/g,'');%> </div>
         </div>
-        <div class="tile" id="userJobTile2" onclick="applyJob(this.id);">
-            <h3>Librarian, Hampshire Council</h3><h4>Sorting of books, magazines and DVDs. Handling customer questions about location of books within the library</h4>
-        </div>
-        <div class="tile" id="userJobTile3" onclick="applyJob(this.id);">
-            <h3>Sales attendant, Big W</h3><h4>Facing of shelves, replenishment of stock and customer service. </h4>
-        </div>
+        <%}%>
+        <%}%>
+
     </div>
+
+
     <div class="User">
         <div class = "Details">
             <!--id to be used to get data from server-->
-            <h3><label id="UserFullName"><%= user.name %></label></h3>
+            <h3><label id="UserUsername"><%= user.Username %></label></h3>
+
             <figure>
                 <img src="../media/John.jpeg" alt="Profile picture" class = "profilePictures">
             </figure>
@@ -60,13 +65,14 @@
             <h4><label>Interests:</label></h4>
             <!--id to be used to get data from server-->
             <textarea readonly id="userInterests" rows="4" cols="50">
-                <%= user.interests %>
+                <%= user.Interests; %>
 
             </textarea>
             <h4><label>Experiences:</label></h4>
             <!--id to be used to get data from server-->
             <textarea readonly id="userExperience" rows="4" cols="50">
-                <%= user.experiences %>
+                <%= user.Experiences ;%>
+
 
             </textarea>
 
@@ -119,42 +125,21 @@
 
     function goHome(){
         console.log('Go home.');
-        window.location = 'home';
+        window.location = '/home';
     }
     function goJobs(){
-        window.location = 'jobs';
+        window.location = '/jobs/'+document.getElementById("UserUsername").innerText;
     }
     function goCompanies(){
-        window.location = 'companies';
+        window.location = '/companies/'+document.getElementById("UserUsername").innerText;
     }
     function goTraining(){
-        window.location = 'training';
+        window.location = '/training';
     }
     function goExperience(){
-        window.location = 'experiences';
+        window.location = '/experiences';
     }
-    function goUserSignup() {
-        window.location = 'userSignup';
-    }
-    function goCompanySignup(){
-        window.location = 'companySignup';
-    }
-    function goToProfile(elementid){
-        //check username in db
-        //username = document.getElementById(elementid).valueOf();
-        //if user go to userPage
-        if((Math.floor(Math.random() *2)+1) === 1){
-            window.location='userProfile'
-        }else{
-            window.location ='companyProfile';
-        }
 
-        //if company go to companyPage
-        //window.location='companyProfile';
-    }
-    function goToCompanyProfile(){
-        window.location ='companyProfile';
-    }
 
 </script>
 

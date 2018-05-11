@@ -40,26 +40,18 @@
 
     <div class="wrapper">
 
-        <div class="tile" id="companyTile1" >
-            <b><h3>CardBoard Enthusiasts</h3></b><h4>Delivery quality cardboard since 1977. We provide many additional products as well. Check us out!<br> <h3>Workplace Rating:</h3></h4>
-                <div class = "tileBackground"> CE </div>
-        </div>
-        <div class="tile" id="companyTile2" >
-            <b><h3>Hampshire Council</h3></b><h4>We put our residents first.<br> <h3>Workplace Rating:</h3></h4>
-            <div class = "tileBackground"> HC </div>
-        </div>
-        <div class="tile" id="companyTile3" >
-            <b><h3>Tennis Australia</h3></b><h4>We strive to be inviting, and focus on encouragement within the competitive world of sport. <br> <h3>Workplace Rating:</h3></h4>
-            <div class = "tileBackground"> TA </div>
-        </div>
-        <div class="tile" id="companyTile4" >
-            <b><h3>Ernst and Young</h3></b><h4>We push the boundaries of the workforce.<br> <h3>Workplace Rating:</h3></h4>
-            <div class = "tileBackground"> EY </div>
-        </div>
-        <div class="tile" id="companyTile5" >
-            <b><h3>Big W </h3></b><h4>We are focused on delivering excellent customer service.<br> <h3>Workplace Rating:</h3></h4>
-            <div class = "tileBackground"> CE </div>
-        </div>
+        <% for(var i=0;i<companies.length;i++){
+
+            if(companies[i].CompanyName && companies[i].Description){%>
+            <div class="tile" id="companyTile<%=i+1%>" >
+                <b><h3><%=companies[i].CompanyName%></h3></b><h4><%=companies[i].Description%></h4><br> <h3>Workplace Rating:</h3>
+                <h4><%=companies[i].Rating%>/5</h4>
+                <div class = "tileBackground"> <%=companies[i].CompanyName.replace(/[a-z]/g, '').replace(/\s+/g,'');%> </div>
+            </div>
+            <%}%>
+        <%}%>
+
+
 
 
     </div>
@@ -67,7 +59,7 @@
 
 
     <div class="LoggedIn">
-        <label><h4>Logged in as: </h4></label><label id="UsernameLink" onclick="goToProfile(this.id);"><h4><u>John</u></h4></label>
+        <label><h4>Logged in as: </h4></label><label id="UsernameLink" onclick="goToProfile(this.id);"><h4><u><%=company%></u></h4></label>
         <img src="media/John.jpeg" class = "profilePictures">
 
 
@@ -134,42 +126,35 @@
 
     function goHome(){
         console.log('Go home.');
-        window.location = 'home';
+        window.location = '/home';
     }
     function goJobs(){
-        window.location = 'jobs';
+        window.location = '/jobs/'+document.getElementById("UsernameLink").innerText;
     }
     function goCompanies(){
-        window.location = 'companies';
+        window.location = '/companies/'+document.getElementById("UsernameLink").innerText;
     }
     function goTraining(){
-        window.location = 'training';
+        window.location = '/training/'+document.getElementById("UsernameLink").innerText;
     }
     function goExperience(){
-        window.location = 'experiences';
+        window.location = '/experiences/'+document.getElementById("UsernameLink").innerText;
     }
-    function goUserSignup() {
-        window.location = 'userSignUp';
-    }
-    function goCompanySignup(){
-        window.location = 'companySignUp';
-    }
+
     function goToProfile(elementid){
-        //check username in db
-        //username = document.getElementById(elementid).valueOf();
-        //if user go to userPage
-        if((Math.floor(Math.random() *2)+1) === 1){
-            window.location='userProfile'
+
+        if(document.getElementById("UsernameLink").textContent === "Not logged in") {
+            alert("Please login to be able to access your profile");
         }else{
-            window.location ='companyProfile';
+            window.location='/Profile/'+document.getElementById("UsernameLink").innerText;
+
+
         }
 
-        //if company go to companyPage
-        //window.location='companyProfile';
+
+
     }
-    function goToCompanyProfile(){
-        window.location ='companyProfile';
-    }
+
 
 </script>
 

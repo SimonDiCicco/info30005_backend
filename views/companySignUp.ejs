@@ -37,31 +37,39 @@
 
 
     </div>
-
+    <form action="/api/addCompany" method="post">
     <div class= "jobdesc">
-        <form>
+
             <div class = "paddingtext">
                 <h3>Company Name:</h3>
             </div>
-            <textarea type="text" id="company"></textarea> <br>
-            <div class = "paddingtext">
+
+            <textarea type="text" id="company" name="CompanyName"></textarea> <br>
+
+        <h3>Username:</h3>
+
+            <input id="Username" type="text" name="username" class="nameBox">
+        <h3>Password:</h3>
+            <input id="Password" type="text" name="password" class="nameBox">
+
+        <div class = "paddingtext">
                 <h3>Description:</h3>
             </div>
-            <textarea type="text" id="descbox"></textarea> <br>
-        </form>
-        <h3>How supportive are you with disabilities?</h3>
-        <form>
+            <textarea type="text" id="descbox" name="Description"></textarea> <br>
 
-            <h4>Wheelchair access<input type="checkbox" id="checkboxes1"/>
-                Braile on signs<input type="checkbox" id="checkboxes2"/>
-                Tactile surfaces where crucial<input type ="checkbox" id="checkboxes3"/>
+        <h3>How supportive are you with disabilities?</h3>
+
+
+            <h4>Wheelchair access<input type="checkbox" name="checkboxes1"/>
+                Braile on signs<input type="checkbox" name="checkboxes2"/>
+                Tactile surfaces where crucial<input type ="checkbox" name="checkboxes3"/>
             </h4>
 
             <br>
-            <h4>Quiet spaces<input type="checkbox" id="checkboxes4"/>
-            Support and training<input type="checkbox" id="checkboxes5"/>
+            <h4>Quiet spaces<input type="checkbox" name="checkboxes4"/>
+            Support and training<input type="checkbox" name="checkboxes5"/>
             </h4>
-        </form>
+
     </div>
 
     <div class="uploadAndSubmit">
@@ -73,9 +81,10 @@
             <h3>Click picture to upload!</h3>
         </div>
         <div class="buttonLinks">
-            <button onclick="goJobs();" name = "submit" type = "button">Sign Up</button>
+            <button  name = "submit" type = "submit">Sign Up</button>
         </div>
     </div>
+    </form>
 
 </div>
 
@@ -124,41 +133,36 @@
 
     function goHome(){
         console.log('Go home.');
-        window.location = 'home';
+        window.location = '/home';
     }
     function goJobs(){
-        window.location = 'jobs';
+        window.location = '/jobs/'+document.getElementById("UsernameLink").innerText;
     }
     function goCompanies(){
-        window.location = 'companies';
+        window.location = '/companies/'+document.getElementById("UsernameLink").innerText;
     }
     function goTraining(){
-        window.location = 'training';
+        window.location = '/training/'+document.getElementById("UsernameLink").innerText;
     }
     function goExperience(){
-        window.location = 'experiences';
+        window.location = '/experiences/'+document.getElementById("UsernameLink").innerText;
     }
-    function goUserSignup() {
-        window.location = 'userSignup';
-    }
-    function goCompanySignup(){
-        window.location = 'companySignup';
-    }
+
     function goToProfile(elementid){
         //check username in db
         //username = document.getElementById(elementid).valueOf();
         //if user go to userPage
-        if((Math.floor(Math.random() *2)+1) === 1){
-            window.location='userProfile'
+        if(document.getElementById("UsernameLink").textContent === "Not logged in") {
+            alert("Please login to be able to access your profile");
         }else{
-            window.location ='companyProfile';
+            window.location='/userProfile/'+document.getElementById("UsernameLink").innerText;
+            //window.location='/companyProfile/'+document.getElementById("UsernameLink").innerText;
+            //window.location ='/Profile/company/'+document.getElementById("UsernameLink").innerText;
+
         }
 
-        //if company go to companyPage
-        //window.location='companyProfile';
-    }
-    function goToCompanyProfile(){
-        window.location ='companyProfile';
+
+
     }
 
 </script>

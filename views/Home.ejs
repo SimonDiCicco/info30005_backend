@@ -67,23 +67,29 @@
     <div id="id1" class="modalForm">
 
         <span onclick="document.getElementById('id1').style.display='none'"
-              class="close" title="Close ModalForm">Exit</span>
+              class="close" title="Close ModalForm" style="font-family: 'Comic Sans MS'">X </span>
 
         <!-- Content within the ModalForm -->
-        <form class = "OpenModalForm" action="../app.js">
-            <div class="popup">
+        <form class = "OpenModalForm" action="/api/login" method="post">
+            <h3 class="popup">
                 <br><br>
-                <label ><b>Username: </b></label>
-                <input  id= "uname" type="text" placeholder="Enter your Username" name = "username" required>
-                <br><br>
-                <label ><b>Password:   </b></label>
-                <input id="pword" type="text" placeholder="Enter your Password" name = "username" required>
-                <br><br><br><br>
+                <h2><label><b>     Username: </b></label></h2>
+                <input style="font-size:22px;"  size="30" width="20" id= "uname" type="text" placeholder="Enter your Username" name = "username" required>
+                <br><br><br>
+                    <h2><label ><b>     Password:   </b></label></h2>
+                <input style="font-size:22px;"  size="30"id="pword" type="text" placeholder="Enter your Password" name = "password" required>
+                <br><br><br>
+                   <h2> <label>Please Select one:</label><br></h2>
+                <h3><label>  Company: </label><input size="50"type="checkbox" id="CompanyCheck" name="CompanyCheck"></h3>
+                <h3><label>  Job Seeker:</label><input size="50"type="checkbox" id="SeekerCheck" name="SeekerCheck"></h3>
+                <br>
                 <!-- to input linkage html page for login -->
-                <button type="button" onclick="login();">Login</button>
+                <button type="submit" >Login</button>
+
+            </h3>
+    </div>
 
 
-            </div>
 
         </form>
 
@@ -123,63 +129,27 @@
 
 
         }
-        function clearContent(id){
-            document.getElementById(id).value = '';
-        }
-        function addJob(){
-            window.location = 'jobs';    // TODO change
-        }
 
-        function postJob(){
 
-            var job = {
-                title: document.getElementById('jobTitle').valueOf(),
-                description: document.getElementById('jobDesc').valueOf(),
-                email: document.getElementById('jobEmail').valueOf()
-            };
-            //jobs.push(job);
-            window.location = 'companyProfile';
-        }
-            /* Submit and save data entered*/
-
-        function goHome(){
-
-            window.location = 'home';
-        }
         function goJobs(){
-            window.location = 'jobs';
+            window.location = '/jobs/'+"Not logged in";
         }
         function goCompanies(){
-            window.location = 'companies';
+            window.location = '/companies/'+"Not logged in";
         }
         function goTraining(){
-            window.location = 'training';
+            window.location = '/training/'+"Not logged in";
         }
         function goExperience(){
-            window.location = 'experiences';
+            window.location = '/experiences/'+"Not logged in";
         }
         function goUserSignup() {
-            window.location = 'userSignup';
+            window.location = '/userSignup';
         }
         function goCompanySignup(){
-            window.location = 'companySignup';
+            window.location = '/companySignup';
         }
-        function goToProfile(elementid){
-            //check username in db
-            //username = document.getElementById(elementid).valueOf();
-            //if user go to userPage
-            if((Math.floor(Math.random() *2)+1) === 1){
-                window.location='userProfile'
-            }else{
-                window.location ='companyProfile';
-            }
 
-            //if company go to companyPage
-            //window.location='companyProfile';
-        }
-        function goToCompanyProfile(){
-            window.location ='companyProfile';
-        }
 
     </script>
 </body>

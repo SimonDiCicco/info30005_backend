@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" href="../stylesheets/tiles.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../stylesheets/profile.css" media="screen">
     <script src="../app.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -37,15 +39,23 @@
     </div>
 
     <div class="wrapper">
-        <div class="tile" id="jobTile1" onclick="applyJob(this.id);">
-            <h3><%= job.title%></h3><h4><%= job.description%></h4>
-        </div>
+
+
+        <% for(var i=0;i<jobs.length;i++){
+
+            if(jobs[i].title && jobs[i].description){%>
+                 <div class="tile" id="jobTile<%=i+1%>" >
+                    <b><h3><%=jobs[i].title%></h3></b><h4><%=jobs[i].description%></h4>
+                    <div class = "tileBackground"> <%=jobs[i].title.replace(/[a-z]/g, '').replace(/\s+/g,'');%> </div>
+                </div>
+            <%}%>
+        <%}%>
 
     </div>
     <div class="Company">
         <div class = "Details">
             <!--id to be used to get data from server-->
-            <h3><label id="CompanyName" onclick="goToCompanyProfile()"><%= company.name %></label></h3>
+            <h3><label id="CompanyName" onclick="goToCompanyProfile()"><%=company[0].CompanyName%></label></h3>
             <figure>
                 <img src="media/avatar.png" alt="Profile picture" width="70" height="70">
             </figure>
@@ -55,7 +65,8 @@
             <label><h4>Description:</h4></label>
             <!--id to be used to get data from server-->
             <textarea readonly id="companyDescription" rows="4" cols="80">
-                <%= company.description %>
+
+                <%=company[0].Description%>
 
             </textarea>
             <label><h4>Workplace Rating:</h4></label>
@@ -119,42 +130,22 @@
 
     function goHome(){
         console.log('Go home.');
-        window.location = 'home';
+        window.location = '/home';
     }
     function goJobs(){
-        window.location = 'jobs';
+        window.location = '/jobs/'+document.getElementById("CompanyName").innerText;
     }
     function goCompanies(){
-        window.location = 'companies';
+        window.location = '/companies/'+document.getElementById("CompanyName").innerText;
     }
     function goTraining(){
-        window.location = 'training';
+        window.location = '/training';
     }
     function goExperience(){
-        window.location = 'experiences';
+        window.location = '/experiences';
     }
-    function goUserSignup() {
-        window.location = 'userSignup';
-    }
-    function goCompanySignup(){
-        window.location = 'companySignup';
-    }
-    function goToProfile(elementid){
-        //check username in db
-        //username = document.getElementById(elementid).valueOf();
-        //if user go to userPage
-        if((Math.floor(Math.random() *2)+1) === 1){
-            window.location='userProfile'
-        }else{
-            window.location ='companyProfile';
-        }
 
-        //if company go to companyPage
-        //window.location='companyProfile';
-    }
-    function goToCompanyProfile(){
-        window.location ='companyProfile';
-    }
+
 
 </script>
 
