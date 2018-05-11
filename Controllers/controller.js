@@ -226,7 +226,7 @@ module.exports.JobApply = function(req,res){
     JobSeeker.find({Username:req.params.username},
         function(err,user){
 
-            if(user.Username) {
+            if(user.length === 1) {
 
 
                 console.log(req.params.username);
@@ -246,10 +246,11 @@ module.exports.JobApply = function(req,res){
 
                                 //alert( "You have successfully applied to work for "+req.body.CompanyName);
                                 console.log("You have successfully applied to work for " + req.body.CompanyName);
+                                res.redirect('/Profile/'+req.params.username);
                             });
                     });
             }else{
-                res.send({message: "You have successfully applied to work for " + req.body.CompanyName});
+
                 res.redirect('/jobs/'+req.params.username);
             }
 

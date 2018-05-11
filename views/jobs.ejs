@@ -54,7 +54,7 @@
             var action = '/api/apply/'+user;
         if(jobs[i].title && jobs[i].description){%>
         <form action='<%=action;%>' method="post" id="<%=str%>">
-        <div class="tile"  id="jobTile<%=i+1%>" onclick="document.forms['<%=str%>'].submit();">
+        <div class="tile"  id="jobTile<%=i+1%>" onclick="applyJob('<%=str%>');">
             <input type="hidden" id = "title" name="title" value="<%=jobs[i].title;%>">
             <input type="hidden" id="CompanyName" name="CompanyName" value="<%=jobs[i].company;%>">
             <%= console.log(jobs[i].title);%>
@@ -75,7 +75,7 @@
 
 
     <div class="LoggedIn">
-        <h4><label>Logged in as:</label></h4><h4><label id="UsernameLink" onclick="goToProfile(this.id);"><%=user%></label></h4>
+        <h4><label>Logged in as:</label></h4><h4><label id="UsernameLink" onclick="goToProfile(this.id);"><u><%=user%></u></label></h4>
         <img src="media/bigw.png" class = "profilePictures">
     </div>
 </div>
@@ -138,11 +138,36 @@
 
     function goToProfile(elementid){
 
+        if(document.getElementById("UsernameLink").textContent === "Not logged in") {
+            alert("Please login to be able to access your profile");
+        }else{
             window.location='/Profile/'+document.getElementById("UsernameLink").innerText;
 
 
-    }
+        }
 
+
+
+    }
+    function applyJob(id){
+
+
+        if(document.getElementById("UsernameLink").textContent === "Not logged in") {
+            alert("Please login to be able to apply for this Job.");
+        }else{
+            alert("Thank you for applying." +
+                "Your details will be passed on!");
+            document.forms[id].submit();
+
+
+        }
+
+
+
+
+
+
+    }
 </script>
 
 </body>

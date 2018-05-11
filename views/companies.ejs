@@ -142,15 +142,12 @@
     }
 
     function goToProfile(elementid){
-        //check username in db
-        //username = document.getElementById(elementid).valueOf();
-        //if user go to userPage
+
         if(document.getElementById("UsernameLink").textContent === "Not logged in") {
             alert("Please login to be able to access your profile");
         }else{
-            window.location='/userProfile/'+document.getElementById("UsernameLink").innerText;
-            //window.location='/companyProfile/'+document.getElementById("UsernameLink").innerText;
-            //window.location ='/Profile/company/'+document.getElementById("UsernameLink").innerText;
+            window.location='/Profile/'+document.getElementById("UsernameLink").innerText;
+
 
         }
 

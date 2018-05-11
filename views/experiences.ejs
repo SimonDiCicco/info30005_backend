@@ -49,90 +49,44 @@
             </tr>
         </table>
     </div>
+    <div class="LoggedIn">
+        <h4><label>Logged in as:</label></h4><h4><label id="UsernameLink" onclick="goToProfile(this.id);"><u><%=user%></u></label></h4>
+        <img src="media/bigw.png" class = "profilePictures">
+    </div>
 </div>
 
 <script type="text/javascript">
-    function userSignUp(){
-        /*
-        var uname = document.getElementById("newUsername").value;
-        var pword = document.getElementById("newPassword").value;
-
-        this.username.push(uname);
-        this.password.push(pword);
-        console.log(this.username);
-        console.log(this.password);
-    */
-        goJobs();
-
-    }
-
-    function companySignUp(){
-        /*get data from html add to arraylist open newpage with usernamespecified*/
-    }
-
-
-    function login(){
-        goJobs();
-
-    }
-    function clearContent(id){
-        document.getElementById(id).value = '';
-    }
-    function addJob(){
-        window.location = 'JobPost';    // TODO change
-    }
-
-    function postJob(){
-
-        var job = {
-            title: document.getElementById('jobTitle').valueOf(),
-            description: document.getElementById('jobDesc').valueOf(),
-            email: document.getElementById('jobEmail').valueOf()
-        };
-        //jobs.push(job);
-        window.location = 'companyProfile';
-    }
-    /* Submit and save data entered*/
 
     function goHome(){
         console.log('Go home.');
-        window.location = 'home';
+        window.location = '/home';
     }
     function goJobs(){
-        window.location = 'jobs';
+        window.location = '/jobs/'+document.getElementById("UsernameLink").innerText;
     }
     function goCompanies(){
-        window.location = 'companies';
+        window.location = '/companies/'+document.getElementById("UsernameLink").innerText;
     }
     function goTraining(){
-        window.location = 'training';
+        window.location = '/training/'+document.getElementById("UsernameLink").innerText;
     }
     function goExperience(){
-        window.location = 'experiences';
+        window.location = '/experiences/'+document.getElementById("UsernameLink").innerText;
     }
-    function goUserSignup() {
-        window.location = 'userSignup';
-    }
-    function goCompanySignup(){
-        window.location = 'companySignup';
-    }
+
     function goToProfile(elementid){
-        //check username in db
-        //username = document.getElementById(elementid).valueOf();
-        //if user go to userPage
-        if((Math.floor(Math.random() *2)+1) === 1){
-            window.location='userProfile'
+
+        if(document.getElementById("UsernameLink").textContent === "Not logged in") {
+            alert("Please login to be able to access your profile");
         }else{
-            window.location ='companyProfile';
+            window.location='/Profile/'+document.getElementById("UsernameLink").innerText;
+
+
         }
 
-        //if company go to companyPage
-        //window.location='companyProfile';
-    }
-    function goToCompanyProfile(){
-        window.location ='companyProfile';
-    }
 
+
+    }
 </script>
 
 </body>
