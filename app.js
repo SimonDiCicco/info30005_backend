@@ -1,19 +1,20 @@
 /***************************************************/
 const express = require('express');
+
+
+var bodyParser = require('body-parser');
 const app = express();
-
-
-const router = require('./routes/routes');
+app.use(express.static('./public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }))
 //Set View engine
 app.set('view engine','ejs');
-app.use(express.static('public'));
+
 //Heroku server port
 const PORT = process.env.PORT || 3000;
-var bodyParser = require('body-parser');
-app.use(bodyParser.json());
+const router = require('./routes/routes');
+const controller = require('./Controllers/controller');
 /*******************************************************************/
-
-
 
 app.use(router);
 

@@ -32,26 +32,31 @@
 
 
     </div>
-
-    <div class="JobPost">
+    <form action="/api/addJob" method="post">
+    <div class="JobPost" >
 
         <label><h4>Job Title:</h4></label>
-        <input onfocus="clearContent(this.id)" id="jobTitle" size="40" placeholder="Enter a Job Title here">
+        <input onfocus="clearContent(this.id)" name="jobTitle" size="40" placeholder="Enter a Job Title here">
 
+        <label><h4>Company</h4>:</h4></label>
 
+        <textarea onfocus="clearContent(this.id)" name="company" size="40" placeholder="Enter your Company Name!"></textarea>
         <label><h4>Job Description:</h4></label>
 
-        <textarea onfocus="clearContent(this.id)" id="jobDesc" rows="4" cols="80" placeholder="Enter a description here!"></textarea>
+        <textarea onfocus="clearContent(this.id)" name="jobDesc" rows="4" cols="80" placeholder="Enter a description here!"></textarea>
 
         <label><h4>Job response Email:</h4></label>
-        <input onfocus="clearContent(this.id)" id="jobEmail" size="60" placeholder="Please enter an email for job applications to be sent to!">
+        <input onfocus="clearContent(this.id)" name="jobEmail" size="60" placeholder="Please enter an email for job applications to be sent to!">
         <br><br>
-        <button type="submit"  onclick="postJob();">Post Job!</button>
+        <button type="submit">Post Job!</button>
 
     </div>
 
+
+
+    </form>
     <div class="LoggedIn">
-        <label><h4>Logged in as: </h4></label><label id="UsernameLink" onclick="goToProfile(this.id);"><h4><u>Username</u></h4></label>
+        <label><h4>Logged in as: </h4></label><label id="UsernameLink"  onclick="goToProfile(this.id);"><h4><u><%=user%></u></h4></label>
     </div>
 
 </div>
@@ -101,42 +106,38 @@
 
     function goHome(){
         console.log('Go home.');
-        window.location = 'home';
+        window.location = '/home';
     }
     function goJobs(){
-        window.location = 'jobs';
+        window.location = '/jobs/'+document.getElementById("UsernameLink").innerText;
     }
     function goCompanies(){
-        window.location = 'companies';
+        window.location = '/companies/'+document.getElementById("UsernameLink").innerText;
     }
     function goTraining(){
-        window.location = 'training';
+        window.location = '/training/'+document.getElementById("UsernameLink").innerText;
     }
     function goExperience(){
-        window.location = 'experiences';
+        window.location = '/experiences/'+document.getElementById("UsernameLink").innerText;
     }
-    function goUserSignup() {
-        window.location = 'userSignup';
-    }
-    function goCompanySignup(){
-        window.location = 'companySignup';
-    }
+
     function goToProfile(elementid){
         //check username in db
         //username = document.getElementById(elementid).valueOf();
         //if user go to userPage
-        if((Math.floor(Math.random() *2)+1) === 1){
-            window.location='userProfile'
+        if(document.getElementById("UsernameLink").textContent === "Not logged in") {
+            alert("Please login to be able to access your profile");
         }else{
-            window.location ='companyProfile';
+            window.location='/userProfile/'+document.getElementById("UsernameLink").innerText;
+            //window.location='/companyProfile/'+document.getElementById("UsernameLink").innerText;
+            //window.location ='/Profile/company/'+document.getElementById("UsernameLink").innerText;
+
         }
 
-        //if company go to companyPage
-        //window.location='companyProfile';
+
+
     }
-    function goToCompanyProfile(){
-        window.location ='companyProfile';
-    }
+
 
 </script>
 

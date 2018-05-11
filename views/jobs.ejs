@@ -48,30 +48,24 @@
     </div>
 
     <div class="wrapper">
-        <div class="tile" id="jobTile1" onclick="applyJob(this.id);">
-            <h3>HR Assistant, Ernst and Young</h3><h4>Scanning and printing of documents and council approved plans.</h4>
-            <div class = "tileBackground"> HR </div>
+
+        <% for(var i=0;i<jobs.length;i++){
+            var str = 'jobForm'+i;
+            var action = '/api/apply/'+user;
+        if(jobs[i].title && jobs[i].description){%>
+        <form action='<%=action;%>' method="post" id="<%=str%>">
+        <div class="tile"  id="jobTile<%=i+1%>" onclick="document.forms['<%=str%>'].submit();">
+            <input type="hidden" id = "title" name="title" value="<%=jobs[i].title;%>">
+            <input type="hidden" id="CompanyName" name="CompanyName" value="<%=jobs[i].company;%>">
+            <%= console.log(jobs[i].title);%>
+
+
+            <b><h3><%=jobs[i].title+", "+jobs[i].company%></h3></b><h4><%=jobs[i].description%><br></h4>
+            <div class = "tileBackground"> <%=jobs[i].title.replace(/[a-z]/g, '').replace(/\s+/g,'');%> </div>
         </div>
-        <div class="tile" id="jobTile2" onclick="applyJob(this.id);">
-            <h3>Librarian, Hampshire Council</h3><h4>Sorting of books, magazines and DVDs. Handling customer questions about location of books within the library.</h4>
-            <div class = "tileBackground"> LB </div>
-        </div>
-        <div class="tile" id="jobTile3" onclick="applyJob(this.id);">
-            <h3>Sales attendant, Big W</h3><h4>Facing of shelves, replenishment of stock and customer service.</h4>
-            <div class = "tileBackground"> SA </div>
-        </div>
-        <div class="tile" id="jobTile4" onclick="applyJob(this.id);">
-            <h3>Data Entry, Tennis Australia</h3><h4>Entry of generic sports data, based on input and real life game-play.</h4>
-            <div class = "tileBackground"> DE </div>
-        </div>
-        <div class="tile" id="jobTile5" onclick="applyJob(this.id);">
-            <h3>Pick Packer, CardBoard Enthusiasts</h3><h4>Pick items based on a checklist order, pick at your own rate, accuracy is important.</h4>
-            <div class = "tileBackground"> PP </div>
-        </div>
-        <div class="tile" id="jobTile6" onclick="applyJob(this.id);">
-            <h3>Full Time truck loader</h3><h4>Assist in preparing pallets for transportation. This involves wrapping them and ensuring the contents are stable.</h4>
-            <div class = "tileBackground"> TL </div>
-        </div>
+        </form>
+        <%}%>
+        <%}%>
 
 
     </div>
@@ -81,14 +75,14 @@
 
 
     <div class="LoggedIn">
-        <h4><label>Logged in as:</label></h4><h4><label id="UsernameLink" onclick="goToProfile(this.id);">Big W</label></h4>
+        <h4><label>Logged in as:</label></h4><h4><label id="UsernameLink" onclick="goToProfile(this.id);"><%=user%></label></h4>
         <img src="media/bigw.png" class = "profilePictures">
     </div>
 </div>
 
 <script type="text/javascript">
     function goJobAdd(){
-        window.location = 'jobPost';
+        window.location = '/jobPost/'+document.getElementById("UsernameLink").innerText;
     }
     function userSignUp(){
         /*
@@ -110,11 +104,9 @@
             alert("Thank you for applying." +
                 "Your details will be passed on!");
             document.getElementById(id).style.backgroundColor= '#e5e5e5';
+            document.getElementById(id).submit();
         }
 
-    }
-    function companySignUp(){
-        /*get data from html add to arraylist open newpage with usernamespecified*/
     }
 
 
@@ -126,59 +118,29 @@
         document.getElementById(id).value = '';
     }
 
-    function addJob(){
-        window.location = 'jobs';    // TODO change
-    }
-
-    function postJob(){
-
-        var job = {
-            title: document.getElementById('jobTitle').valueOf(),
-            description: document.getElementById('jobDesc').valueOf(),
-            email: document.getElementById('jobEmail').valueOf()
-        };
-        //jobs.push(job);
-        window.location = 'companyProfile';
-    }
-    /* Submit and save data entered*/
 
     function goHome(){
         console.log('Go home.');
-        window.location = 'home';
+        window.location = '/home';
     }
     function goJobs(){
-        window.location = 'jobs';
+        window.location = '/jobs/'+document.getElementById("UsernameLink").innerText;
     }
     function goCompanies(){
-        window.location = 'companies';
+        window.location = '/companies/'+document.getElementById("UsernameLink").innerText;
     }
     function goTraining(){
-        window.location = 'training';
+        window.location = '/training/'+document.getElementById("UsernameLink").innerText;
     }
     function goExperience(){
-        window.location = 'experiences';
+        window.location = '/experiences/'+document.getElementById("UsernameLink").innerText;
     }
-    function goUserSignup() {
-        window.location = 'userSignUp';
-    }
-    function goCompanySignup(){
-        window.location = 'companySignUp';
-    }
-    function goToProfile(elementid){
-        //check username in db
-        //username = document.getElementById(elementid).valueOf();
-        //if user go to userPage
-        if((Math.floor(Math.random() *2)+1) === 1){
-            window.location='userProfile'
-        }else{
-            window.location ='companyProfile';
-        }
 
-        //if company go to companyPage
-        //window.location='companyProfile';
-    }
-    function goToCompanyProfile(){
-        window.location ='companyProfile';
+    function goToProfile(elementid){
+
+            window.location='/Profile/'+document.getElementById("UsernameLink").innerText;
+
+
     }
 
 </script>

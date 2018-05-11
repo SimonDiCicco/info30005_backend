@@ -30,7 +30,7 @@
     </div>
 
     <div class= "userInfo">
-        <form>
+        <form action = "/api/addJobSeeker" method="post">
             <table>
                 <tr>
                     <td><h3>First Name:</h3></td>
@@ -46,8 +46,8 @@
                 </tr>
                 <tr>
 
-                    <td><input id="newUsername" type="text" name="username" class="nameBox"></td>
-                    <td><input id="newPassword" type="text" name="password" class="nameBox"></td>
+                    <td><input id="Username" type="text" name="username" class="nameBox"></td>
+                    <td><input id="Password" type="text" name="password" class="nameBox"></td>
                 </tr>
             </table>
             <div class = "paddingtext">
@@ -57,15 +57,18 @@
             <div class = "paddingtext">
                 <h3>Interests:</h3>
             </div>
-            <textarea type="text" id="interests" class="descBox"></textarea>
+            <textarea type="text" id="interests" name="interests" class="descBox"></textarea>
             <div class = "paddingtext">
                 <h3>Experiences:</h3>
             </div>
-            <textarea type="text" id="experience" class="descBox"></textarea>
+            <textarea type="text" id="experiences" name="experiences" class="descBox"></textarea>
             <div class = "paddingtext">
                 <h3>Describe your disability:</h3>
             </div>
             <textarea type="text" id="disability" rows="4" cols="60"></textarea>
+            <div class="buttonLinks">
+                <button type = "submit" name = "signup" >Sign Up</button>
+            </div>
         </form>
     </div>
 
@@ -77,9 +80,7 @@
             <input id="file-input" type="file"/>
             <h3>Click picture to upload!</h3>
         </div>
-        <div class="buttonLinks">
-            <button onclick = "userSignUp();"name = "submit" type = "button">Sign Up</button>
-        </div>
+
     </div>
 
 </div>
@@ -138,41 +139,36 @@
 
     function goHome(){
         console.log('Go home.');
-        window.location = 'home';
+        window.location = '/home';
     }
     function goJobs(){
-        window.location = 'jobs';
+        window.location = '/jobs/'+document.getElementById("UsernameLink").innerText;
     }
     function goCompanies(){
-        window.location = 'companies';
+        window.location = '/companies/'+document.getElementById("UsernameLink").innerText;
     }
     function goTraining(){
-        window.location = 'training';
+        window.location = '/training/'+document.getElementById("UsernameLink").innerText;
     }
     function goExperience(){
-        window.location = 'experiences';
+        window.location = '/experiences/'+document.getElementById("UsernameLink").innerText;
     }
-    function goUserSignup() {
-        window.location = 'userSignup';
-    }
-    function goCompanySignup(){
-        window.location = 'companySignup';
-    }
+
     function goToProfile(elementid){
         //check username in db
         //username = document.getElementById(elementid).valueOf();
         //if user go to userPage
-        if((Math.floor(Math.random() *2)+1) === 1){
-            window.location='userProfile'
+        if(document.getElementById("UsernameLink").textContent === "Not logged in") {
+            alert("Please login to be able to access your profile");
         }else{
-            window.location ='companyProfile';
+            window.location='/userProfile/'+document.getElementById("UsernameLink").innerText;
+            //window.location='/companyProfile/'+document.getElementById("UsernameLink").innerText;
+            //window.location ='/Profile/company/'+document.getElementById("UsernameLink").innerText;
+
         }
 
-        //if company go to companyPage
-        //window.location='companyProfile';
-    }
-    function goToCompanyProfile(){
-        window.location ='companyProfile';
+
+
     }
 
 </script>
