@@ -24,7 +24,8 @@
     </div>
 
     <div class = "buttonLinks">
-        <button name = "homeButton" type = "button" onclick="goHome();">Home</button>
+        <% if%>
+        <button name = "logoutButton" type = "button" onclick="goHome();">Logout</button>
         <br>
         <button name ="jobsButton" type = "button" onclick="goJobs();">Jobs</button>
         <br>
@@ -44,7 +45,9 @@
 
             if(companies[i].CompanyName && companies[i].Description){%>
             <div class="tile" id="companyTile<%=i+1%>" >
-                <b><h3><%=companies[i].CompanyName%></h3></b><h4><%=companies[i].Description%></h4><br> <h3>Workplace Rating:</h3>
+                <h3><%=companies[i].CompanyName%></h3>
+                <h4><%=companies[i].Description%></h4>
+                <h3>Workplace Rating:</h3>
                 <h4><%=companies[i].Rating%>/5</h4>
                 <div class = "tileBackground"> <%=companies[i].CompanyName.replace(/[a-z]/g, '').replace(/\s+/g,'');%> </div>
             </div>
