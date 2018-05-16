@@ -20,7 +20,11 @@
     </div>
 
     <div class = "buttonLinks">
-        <button name = "logoutButton" type = "button" onclick="goHome();">Logout</button>
+        <% if(user.textContent === "Not logged in"){%>
+        <button name = "logoutButton" type = "button" onclick="goHome();">Home</button>
+        <%}else{%>
+            <button name = "logoutButton" type = "button" onclick="goHome();">Logout</button>
+        <%}%>
         <br>
         <button name ="jobsButton" type = "button" onclick="goJobs();">Jobs</button>
         <br>
@@ -52,7 +56,7 @@
     </div>
 
     <div class="LoggedIn">
-        <h4><label>Logged in as:</label></h4><h4><label id="UsernameLink" onclick="goToProfile(this.id);">Big W</label></h4>
+        <h4><label>Logged in as:</label></h4><h4><label id="UsernameLink" onclick="goToProfile(this.id);"><%=user%></label></h4>
         <img src="media/bigw.png" class = "profilePictures">
     </div>
 
@@ -123,18 +127,14 @@
     function goCompanySignup(){
         window.location = 'companySignup';
     }
-    function goToProfile(elementid){
-        //check username in db
-        //username = document.getElementById(elementid).valueOf();
-        //if user go to userPage
-        if((Math.floor(Math.random() *2)+1) === 1){
-            window.location='userProfile'
-        }else{
-            window.location ='companyProfile';
-        }
+    function goToProfile(elementid) {
+        if (document.getElementById("UsernameLink").textContent === "Not logged in") {
+            alert("Please login to be able to access your profile");
+        } else {
+            window.location = '/Profile/' + document.getElementById("UsernameLink").innerText;
 
-        //if company go to companyPage
-        //window.location='companyProfile';
+
+        }
     }
     function goToCompanyProfile(){
         window.location ='companyProfile';
