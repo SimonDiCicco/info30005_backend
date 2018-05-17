@@ -1,6 +1,6 @@
 .page{
     display:grid;
-    grid-template-columns:20% 60% 20%;
+    grid-template-columns:20% 50% 30%;
     grid-template-rows: 25% 50% 25%;
     min-width: 600px;
     grid-column-gap: 1%;
@@ -35,5 +35,3 @@
     min-width: auto;
     text-align: left;
 }
-
-

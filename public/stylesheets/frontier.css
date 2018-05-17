@@ -86,7 +86,7 @@ input{
 .container{
 
     float: left;/*maybe not this*/
-    grid-column: 1/4;
+    grid-column: 1/span all;
     grid-row: 1/2;
     text-align: center;
     color: black;
@@ -97,6 +97,7 @@ input{
     grid-column: 1/2;
     grid-row: 2/4;
     padding: 10px;
+    margin: 5px;
 }
 
 .profilePictures {

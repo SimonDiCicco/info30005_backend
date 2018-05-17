@@ -9,18 +9,51 @@
     height: 100%;
     opacity : 0.4;
     z-index: -1;
+    background-size: cover;
 }
-
 .page{
     display:grid;
-    grid-template-columns:25% 50% 25%;
-    grid-template-rows: 25% 10% 65%;
+    grid-template-columns:20% 20% 20% 20% 20%;
+    grid-template-rows:25% 50% 25%;
 }
+.Login{
+    grid-column: 5;
+    grid-row: 3;
+}
+.homeButtonLinks{
 
-.LoginSignUp{
-    grid-row: 2/4;
-    grid-column: 3/4;
-    padding-left: 20%;
+    grid-column: 1/span 5;
+    grid-row: 3/span 2;
+    margin-top: 20%;
+    text-align: center;
+}
+.homeButton {
+    display: inline-block;
+    background-color: antiquewhite;
+    cursor: pointer;
+    border: 3px solid #B7AFA3;
+    font-size: 1.5em;
+    border-radius: 8px;
+    width: 250px;
+    height: 100px;
+    font-family: 'Lato', 'Sans-serif', serif;
+    font-weight: 600;
+    font-size: 2em;
+    margin: 30px;
+    opacity: 0.8;
+}
+/*.jobSeekerStart{*/
+    /*grid-row: 2/4;*/
+    /*grid-column: 1/span 2;*/
+    /*background-color: cornflowerblue;*/
+    /*width: 100%;*/
+/*}*/
+
+.Signup{
+    grid-column: 1/span 5;
+    grid-row: 3/span 2;
+    margin-top: 30%;
+    text-align: center;
 }
 
 .sliderHolder{
