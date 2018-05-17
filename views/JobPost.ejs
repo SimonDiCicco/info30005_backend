@@ -20,7 +20,7 @@
     </div>
 
     <div class = "buttonLinks">
-        <% if(user.textContent === "Not logged in"){%>
+        <% if(user === "Not logged in"){%>
         <button name = "logoutButton" type = "button" onclick="goHome();">Home</button>
         <%}else{%>
             <button name = "logoutButton" type = "button" onclick="goHome();">Logout</button>
@@ -56,8 +56,8 @@
     </div>
 
     <div class="LoggedIn">
-        <h4><label>Logged in as:</label></h4><h4><label id="UsernameLink" onclick="goToProfile(this.id);"><%=user%></label></h4>
-        <img src="media/bigw.png" class = "profilePictures">
+        <h4><label>Logged in as:</label></h4><h4><label id="UsernameLink" onclick="goToProfile(this.id);"><u><%=user%></u></label></h4>
+        <img src="/media/bigw.png" class = "profilePictures">
     </div>
 
 </div>

@@ -37,3 +37,11 @@
     left: 0px;
     overflow: hidden;
 }
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    grid-gap: 10px;
+    grid-auto-rows: 270px;
+    padding: 5px;
+}

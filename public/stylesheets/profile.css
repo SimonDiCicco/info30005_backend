@@ -54,9 +54,3 @@
     grid-row: 2/4;
     text-align: left;
 }
-
-.LoggedIn{
-    grid-column: 3/4;
-    grid-row: 2/3;
-    text-align: left;
-}

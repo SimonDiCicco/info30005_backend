@@ -9,13 +9,13 @@
 
 }
 
-.wrapper{
-    display: grid;
-    grid-template-columns: repeat(3, 2fr);
-    grid-gap: 10px;
+/*.wrapper{*/
+    /*display: grid;*/
+    /*grid-template-columns: repeat(3, 2fr);*/
+    /*grid-gap: 10px;*/
 
-    grid-auto-rows: 270px;
-}
+    /*grid-auto-rows: 270px;*/
+/*}*/
 
 .addjob {
     position: absolute;

@@ -1,20 +1,26 @@
 .page{
     display:grid;
     grid-template-columns:25% 50% 25%;
-    grid-template-rows: 25% 50% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
     min-width: 600px;
     grid-column-gap: 1%;
     grid-row-gap: 1%;
 }
 
 .courseLinks {
+    grid-column: 3/4;
+    grid-row: 3/4;
     background-color: antiquewhite;
     border: 5px solid #B7AFA3;
     width: 20em;
+    margin-top: 2cm;
 }
 
 .tutorialLinks {
+    grid-column: 2/4;
+    grid-row: 3/4;
     background-color: antiquewhite;
     border: 5px solid #B7AFA3;
     width: 36em;
+    margin-top: 1cm;
 }

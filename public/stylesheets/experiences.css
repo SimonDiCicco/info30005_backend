@@ -1,14 +1,18 @@
 .page{
     display:grid;
-    grid-template-columns:25% 50% 25%;
+    grid-template-columns:20% 60% 20%;
     grid-template-rows: 25% 50% 25%;
     min-width: 600px;
     grid-column-gap: 1%;
     grid-row-gap: 1%;
 }
 
-.userInfo {
+.experiences{
+    grid-column: 2/4;
+    grid-row: 2/4;
+}
 
+.userInfo {
     grid-column: 2/3;
     grid-row: 2/4;
     color: black;
@@ -28,6 +32,7 @@
 
 .description {
     resize: none;
+    min-width: auto;
     text-align: left;
 }
 
