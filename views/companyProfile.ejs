@@ -24,7 +24,11 @@
     </div>
 
     <div class = "buttonLinks">
+        <% if(user === "Not logged in"){%>
+        <button name = "logoutButton" type = "button" onclick="goHome();">Home</button>
+        <%}else{%>
         <button name = "logoutButton" type = "button" onclick="goHome();">Logout</button>
+        <%}%>
         <br>
         <button name ="jobsButton" type = "button" onclick="goJobs();">Jobs</button>
         <br>
