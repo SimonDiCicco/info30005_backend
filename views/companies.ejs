@@ -51,7 +51,15 @@
                 <h3><%=companies[i].CompanyName%></h3>
                 <h4><%=companies[i].Description%></h4>
                 <h3>Workplace Rating:</h3>
-                <h4><%=companies[i].Rating%>/5</h4>
+                <figure>
+               <% for(j=1;j<=5;j++){
+                    if(j <= companies[i].Rating){%>
+                    <img src="../media/fullstar.png" alt="1 full star" width="25" height="25">
+                    <%}else{%>
+                    <img src="../media/emptystar.png" alt="1 full star" width="25" height="25">
+                    <%}
+                    }%>
+                </figure>
                 <div class = "tileBackground"> <%=companies[i].CompanyName.replace(/[a-z]/g, '').replace(/\s+/g,'');%> </div>
             </div>
             <%}%>

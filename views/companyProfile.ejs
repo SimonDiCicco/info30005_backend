@@ -24,7 +24,7 @@
     </div>
 
     <div class = "buttonLinks">
-        <% if(user === "Not logged in"){%>
+        <% if(company === "Not logged in"){%>
         <button name = "logoutButton" type = "button" onclick="goHome();">Home</button>
         <%}else{%>
         <button name = "logoutButton" type = "button" onclick="goHome();">Logout</button>
@@ -61,7 +61,7 @@
             <!--id to be used to get data from server-->
             <h3><label id="CompanyName" onclick="goToCompanyProfile()"><%=company[0].CompanyName%></label></h3>
             <figure>
-                <img src="media/avatar.png" alt="Profile picture" width="70" height="70">
+                <img src="../media/avatar.png" alt="Profile picture" width="70" height="70">
             </figure>
         </div>
         <div class="CompanyInformation">
@@ -76,12 +76,15 @@
             <label><h4>Workplace Rating:</h4></label>
             <!--id to be used to get data from server-->
             <figure>
-                <img src="media/fullstar.png" alt="1 full star" width="50" height="50">
-                <img src="media/fullstar.png" alt="1 full star" width="50" height="50">
-                <img src="media/fullstar.png" alt="1 full star" width="50" height="50">
-                <img src="media/emptystar.png" alt="1 full star" width="50" height="50">
-                <img src="media/emptystar.png" alt="1 full star" width="50" height="50">
+                <% for(j=1;j<=5;j++){
+                if(j <= company[0].Rating){%>
+                <img src="../media/fullstar.png" alt="1 full star" width="50" height="50">
+                <%}else{%>
+                <img src="../media/emptystar.png" alt="1 full star" width="50" height="50">
+                <%}
+                }%>
             </figure>
+
 
 
         </div>
