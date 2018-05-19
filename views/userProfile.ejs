@@ -46,7 +46,7 @@
 
         if(jobs[i].title && jobs[i].description){%>
         <div class="tile" id="userjobTile<%=i+1%>" >
-            <b><h3><%=jobs[i].title+", "+jobs[i].company%></h3></b><h4><%=jobs[i].description%><br> <h3>Workplace Rating:</h3></h4>
+            <b><h3><%=jobs[i].title+", "+jobs[i].company%></h3></b><h4><%=jobs[i].description%></h4>
             <div class = "tileBackground"> <%=jobs[i].title.replace(/[a-z]/g, '').replace(/\s+/g,'');%> </div>
         </div>
         <%}%>
