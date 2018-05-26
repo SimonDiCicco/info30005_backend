@@ -23,7 +23,7 @@
 
     </div>
 
-    <div class = "buttonLinks">
+    <div class = "buttonLinks" aria-label="Navigation">
         <% if(company === "Not logged in"){%>
         <button name = "logoutButton" type = "button" onclick="goHome();">Home</button>
         <%}else{%>
@@ -42,7 +42,7 @@
 
     </div>
 
-    <div class="wrapper">
+    <div class="wrapper" aria-label="Posted jobs">
 
 
         <% for(var i=0;i<jobs.length;i++){
@@ -56,15 +56,15 @@
         <%}%>
 
     </div>
-    <div class="Company">
-        <div class = "Details">
+    <div class="Company" >
+        <div class = "Details" aria-label="Company details">
             <!--id to be used to get data from server-->
-            <h3><label id="CompanyName" onclick="goToCompanyProfile()"><%=company[0].CompanyName%></label></h3>
+            <h3><label aria-label="Name" id="CompanyName" onclick="goToCompanyProfile()"><%=company[0].CompanyName%></label></h3>
             <figure>
                 <img src="../media/avatar.png" alt="Profile picture" width="70" height="70">
             </figure>
         </div>
-        <div class="CompanyInformation">
+        <div class="CompanyInformation" aria-label="Information">
 
             <label><h4>Description:</h4></label>
             <!--id to be used to get data from server-->

@@ -23,7 +23,7 @@
 
     </div>
 
-    <div class = "buttonLinks">
+    <div class = "buttonLinks" aria-label="Navigation">
         <button name = "homeButton" type = "button" onclick="goHome();">Home</button>
         <br>
         <button name ="jobsButton" type = "button" onclick="goJobs();">Jobs</button>
@@ -38,19 +38,19 @@
 
     </div>
     <form action="/api/addCompany" method="post">
-    <div class= "jobdesc">
+    <div class= "jobdesc" aria-label="Job description">
 
             <div class = "paddingtext">
                 <h3>Company Name:</h3>
             </div>
 
-            <textarea type="text" id="company" name="CompanyName"></textarea> <br>
+            <textarea aria-label="Company" type="text" id="company" name="CompanyName"></textarea> <br>
 
         <h3>Username:</h3>
 
-            <input id="Username" type="text" name="username" class="nameBox">
+            <input aria-label="Enter username" id="Username" type="text" name="username" class="nameBox">
         <h3>Password:</h3>
-            <input id="Password" type="text" name="password" class="nameBox">
+            <input aria-label="Enter password" id="Password" type="text" name="password" class="nameBox">
 
         <div class = "paddingtext">
                 <h3>Description:</h3>
@@ -72,15 +72,15 @@
 
     </div>
 
-    <div class="uploadAndSubmit">
-        <div class="imageUpload">
+    <div class="uploadAndSubmit" aria-label="Upload">
+        <div class="imageUpload" aria-label="Image upload">
             <label for="file-input">
                 <img src="media/emptyProfile.png" class = "profilePictures">
             </label>
             <input id="file-input" type="file"/>
             <h3>Click picture to upload!</h3>
         </div>
-        <div class="buttonLinks">
+        <div class="buttonLinks" aria-label="Confirm Sign Up">
             <button  name = "submit" type = "submit">Sign Up</button>
         </div>
     </div>

@@ -15,7 +15,7 @@
 
     </div>
 
-    <div class = "buttonLinks">
+    <div class = "buttonLinks" aria-label="Navigation">
         <% if(user === "Not logged in"){%>
         <button name = "logoutButton" type = "button" onclick="goHome();">Home</button>
         <%}else{%>
@@ -31,7 +31,7 @@
         <button name = "userButton" type = "button" onclick="goExperience();">User Experiences</button>
     </div>
 
-    <div class = "experiences">
+    <div class = "experiences" aria-label="User Experiences">
         <table>
             <tr>
                 <img src="/media/Dylan.jpeg" class = "profilePictures">
@@ -53,7 +53,7 @@
             </tr>
         </table>
     </div>
-    <div class="LoggedIn">
+    <div class="LoggedIn" aria-label="Logged in">
         <h4><label>Logged in as:</label></h4><h4><label id="UsernameLink" onclick="goToProfile(this.id);"><u><%=user%></u></label></h4>
         <img src="../media/John.jpeg" class = "profilePictures">
     </div>

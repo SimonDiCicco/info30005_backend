@@ -19,7 +19,7 @@
 
     </div>
 
-    <div class = "buttonLinks">
+    <div class = "buttonLinks" aria-label="Navigation">
         <% if(user === "Not logged in"){%>
         <button name = "logoutButton" type = "button" onclick="goHome();">Home</button>
         <%}else{%>
@@ -38,18 +38,18 @@
 
     </div>
 
-    <div class="JobPost">
+    <div class="JobPost" aria-label="Job Posting">
 
         <label><h4>Job Title:</h4></label>
-        <input onfocus="clearContent(this.id)" id="jobTitle" size="40" placeholder="Enter a Job Title here">
+        <input aria-label="Enter job title" onfocus="clearContent(this.id)" id="jobTitle" size="40" placeholder="Enter a Job Title here">
 
 
         <label><h4>Job Description:</h4></label>
 
-        <textarea onfocus="clearContent(this.id)" id="jobDesc" rows="8" cols="60" placeholder="Enter a description here!"></textarea>
+        <textarea aria-label="Enter job description" onfocus="clearContent(this.id)" id="jobDesc" rows="8" cols="60" placeholder="Enter a description here!"></textarea>
 
         <label><h4>Job response Email:</h4></label>
-        <input onfocus="clearContent(this.id)" id="jobEmail" size="60" placeholder="Please enter an email for job applications to be sent to!">
+        <input aria-label="Enter an email address" onfocus="clearContent(this.id)" id="jobEmail" size="60" placeholder="Please enter an email for job applications to be sent to!">
         <br><br>
         <button type="submit"  onclick="postJob();">Post Job!</button>
 

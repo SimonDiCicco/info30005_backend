@@ -17,7 +17,7 @@
 
     </div>
 
-    <div class = "buttonLinks">
+    <div class = "buttonLinks" aria-label="Navigation">
         <button name = "homeButton" type = "button" onclick="goHome();">Home</button>
         <br>
         <button name ="jobsButton" type = "button" onclick="goJobs();">Jobs</button>
@@ -29,7 +29,7 @@
         <button name = "userButton" type = "button" onclick="goExperience();">User Experiences</button>
     </div>
 
-    <div class= "userInfo">
+    <div class= "userInfo" aria-label="User Information">
         <form action = "/api/addJobSeeker" method="post">
             <table>
                 <tr>
@@ -38,46 +38,46 @@
 
                 </tr>
                 <tr>
-                    <td><input id="firstName" type="text" name="firstName" class="nameBox"></td>
-                    <td><input id="lastName" type="text" name="lastName" class="nameBox"></td>
+                    <td><input aria-label="Enter first name" id="firstName" type="text" name="firstName" class="nameBox"></td>
+                    <td><input  aria-label="Enter last name" id="lastName" type="text" name="lastName" class="nameBox"></td>
                 </tr>
                 <tr><td><h3>Username:</h3></td>
                     <td><h3>Password:</h3></td>
                 </tr>
                 <tr>
 
-                    <td><input id="Username" type="text" name="username" class="nameBox"></td>
-                    <td><input id="Password" type="text" name="password" class="nameBox"></td>
+                    <td><input aria-label="Enter username" id="Username" type="text" name="username" class="nameBox"></td>
+                    <td><input aria-label="Enter password" id="Password" type="text" name="password" class="nameBox"></td>
                 </tr>
             </table>
             <div class = "paddingtext">
                 <h3> Email</h3>
-                <input type="text" name="email" class="emailBox">
+                <input aria-label="Enter email" type="text" name="email" class="emailBox">
             </div>
             <div class = "paddingtext">
                 <h3>Interests:</h3>
             </div>
-            <textarea type="text" id="interests" name="interests" class="descBox"></textarea>
+            <textarea aria-label="Enter interests" type="text" id="interests" name="interests" class="descBox"></textarea>
             <div class = "paddingtext">
                 <h3>Experiences:</h3>
             </div>
-            <textarea type="text" id="experiences" name="experiences" class="descBox"></textarea>
+            <textarea aria-label="Enter experiences" type="text" id="experiences" name="experiences" class="descBox"></textarea>
             <div class = "paddingtext">
                 <h3>Describe your disability:</h3>
             </div>
-            <textarea type="text" id="disability" rows="4" cols="60"></textarea>
-            <div class="buttonLinks">
-                <button type = "submit" name = "signup" >Sign Up</button>
+            <textarea aria-label="Enter your disability" type="text" id="disability" rows="4" cols="60"></textarea>
+            <div class="buttonLinks" aria-label="Submit">
+                <button aria-label="Submission button" type = "submit" name = "signup" >Sign Up</button>
             </div>
         </form>
     </div>
 
-    <div class="uploadAndSubmit">
-        <div class="imageUpload">
+    <div class="uploadAndSubmit" aria-label="Upload">
+        <div class="imageUpload" aria-label="Image upload">
             <label for="file-input">
                 <img src="media/emptyProfile.png" class = "profilePictures">
             </label>
-            <input id="file-input" type="file"/>
+            <input aria-label="Input file" id="file-input" type="file"/>
             <h3>Click picture to upload!</h3>
         </div>
 

@@ -25,14 +25,14 @@
     </div>
 
 
-    <div class = "JobAdd">
+    <div class = "JobAdd" aria-label="Add a job">
         <button type="button" onclick="goJobAdd();">Add Job</button>
     </div>
 
 
 
 
-    <div class = "buttonLinks">
+    <div class = "buttonLinks" aria-label="Navigation">
         <% if(user === "Not logged in"){%>
         <button name = "logoutButton" type = "button" onclick="goHome();">Home</button>
         <%}else{%>
@@ -48,7 +48,7 @@
         <button name = "userButton" type = "button" onclick="goExperience();">User Experiences</button>
     </div>
 
-    <div class="wrapper">
+    <div class="wrapper" aria-label="Jobs">
 
         <% for(var i=0;i<jobs.length;i++){
             var str = 'jobForm'+i;
