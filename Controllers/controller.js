@@ -7,6 +7,8 @@ require('../models/companydb');
 require('../models/Jobsdb');
 require('../models/JobSeeker');
 
+
+
 var Job = mongoose.model('Jobsdb');
 var JobSeeker = mongoose.model('JobSeeker');
 var Company = mongoose.model('companydb');
@@ -59,7 +61,18 @@ module.exports.goJobs = function(req,res){
         });
 };
 module.exports.goJobPost = function(req,res){
-    res.render('JobPost.ejs',{user:req.params.user});
+    JobSeeker.find({Username:req.params.user},
+        function(err,user){
+            console.log(user);
+            if(user.length === 0){
+                //Not a Seeker, they are a company:
+                res.render('JobPost.ejs',{user:req.params.user});
+            }else{
+               res.redirect(303,'/jobs/'+req.params.user);
+
+            }
+        });
+
 };
 module.exports.goCompanyProfile = function(req,res) {
     /*
@@ -354,8 +367,10 @@ module.exports.addCompany = function(req, res) {
             "Jobs":[],
             "Rating":check
 
+
         }
     );
+
     company.save(function(err,newCompany){
         if(!err){
             res.redirect('/jobs/'+newCompany.CompanyName);

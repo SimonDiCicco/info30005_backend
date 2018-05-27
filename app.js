@@ -7,6 +7,7 @@ const app = express();
 app.use(express.static('./public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
+
 //Set View engine
 app.set('view engine','ejs');
 
@@ -14,6 +15,10 @@ app.set('view engine','ejs');
 const PORT = process.env.PORT || 3000;
 const router = require('./routes/routes');
 const controller = require('./Controllers/controller');
+var fs = require('fs');
+var multer = require('multer');
+var base64 = require('base-64');
+
 /*******************************************************************/
 
 app.use(router);

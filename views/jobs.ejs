@@ -71,13 +71,20 @@
 
     <div class="LoggedIn">
         <h4><label>Logged in as:</label></h4><h4><label id="UsernameLink" onclick="goToProfile(this.id);"><u><%=user%></u></label></h4>
-        <img src="../media/John.jpeg" class = "profilePictures">
+        <img src="../media/avatar.png" class = "profilePictures">
     </div>
 </div>
 
 <script type="text/javascript">
     function goJobAdd(){
-        window.location = '/jobPost/'+document.getElementById("UsernameLink").innerText;
+        if(document.getElementById("UsernameLink").textContent === "Not logged in") {
+            alert("You need to be logged in as a company to be able to post a job!");
+        }else{
+            window.location = '/jobPost/'+document.getElementById("UsernameLink").innerText;
+
+
+        }
+
     }
     function userSignUp(){
         /*

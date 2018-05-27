@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+
 var Schema = mongoose.Schema;
 var Int32 = require('mongoose-int32');
 var companySchema = new Schema(
@@ -10,6 +11,8 @@ var companySchema = new Schema(
         "Password":String,
         "Jobs":Array,
         "Rating":Int32
+
+
     },{collection:'Companies'}
 
 

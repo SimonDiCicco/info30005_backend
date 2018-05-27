@@ -60,8 +60,9 @@
         <div class = "Details">
             <!--id to be used to get data from server-->
             <h3><label id="CompanyName" onclick="goToCompanyProfile()"><%=company[0].CompanyName%></label></h3>
+
             <figure>
-                <img src="../media/avatar.png" alt="Profile picture" width="70" height="70">
+                <img id="profilePicture" src="../media/avatar.png" alt="Profile picture" width="70" height="70">
             </figure>
         </div>
         <div class="CompanyInformation">
@@ -93,6 +94,7 @@
 </div>
 
 <script type="text/javascript">
+
     function userSignUp(){
         /*
         var uname = document.getElementById("newUsername").value;
