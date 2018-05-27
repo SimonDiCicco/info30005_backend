@@ -20,7 +20,7 @@
 
     </div>
 
-    <div class = "buttonLinks">
+    <div class = "buttonLinks" aria-label="Navigation">
         <% if(user === "Not logged in"){%>
         <button name = "logoutButton" type = "button" onclick="goHome();">Home</button>
         <%}else{%>
@@ -55,16 +55,16 @@
     </div>
 
 
-    <div class="User">
-        <div class = "Details">
+    <div class="User" aria-label="User info">
+        <div class = "Details" aria-label="User details">
             <!--id to be used to get data from server-->
-            <h3><label id="UserUsername"><%= user.Username %></label></h3>
+            <h3><label aria-label="Username" id="UserUsername"><%= user.Username %></label></h3>
 
             <figure>
                 <img src="../media/avatar.png" alt="Profile picture" class = "profilePictures">
             </figure>
         </div>
-        <div class="userInformation">
+        <div class="userInformation" aria-label="More user info">
 
             <h4><label>Interests:</label></h4>
             <!--id to be used to get data from server-->

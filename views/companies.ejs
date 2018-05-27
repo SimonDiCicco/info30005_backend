@@ -23,7 +23,7 @@
 
     </div>
 
-    <div class = "buttonLinks">
+    <div class = "buttonLinks" aria-label="Navigation">
         <% if(company === "Not logged in"){%>
         <button name = "logoutButton" type = "button" onclick="goHome();">Home</button>
         <%}else{%>
@@ -42,7 +42,7 @@
 
     </div>
 
-    <div class="wrapper">
+    <div class="wrapper" aria-label="Company description">
 
         <% for(var i=0;i<companies.length;i++){
 
@@ -72,7 +72,7 @@
 
 
 
-    <div class="LoggedIn">
+    <div class="LoggedIn" aria-label="Logged in">
         <label><h4>Logged in as: </h4></label><label id="UsernameLink" onclick="goToProfile(this.id);"><h4><u><%=company%></u></h4></label>
         <img src="../media/avatar.png" class = "profilePictures">
 
